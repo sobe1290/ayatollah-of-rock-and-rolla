@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS nerdQuiz_db;
+
+CREATE DATABASE nerdQuiz_db;
