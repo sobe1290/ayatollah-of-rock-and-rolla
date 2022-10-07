@@ -1,5 +1,6 @@
+
 // Only here to test the api calls to ensure associations pull right. 
-// Delete when routes formally established
+// Delete when routes & server formally established
 
 const express = require('express');
 const sequelize = require('./config/connection');
@@ -50,4 +51,29 @@ app.get('/api/category', async (req, res) => {
         })
         res.json(userData)
     } catch(err) {res.status(500).json(err)}
-});
+
+// END TEST ROUTES 
+// VVV SHEPS WORK BELOW VVV
+
+
+// imports
+const express = require('express');
+const routes = require('./routes');
+const sequelize = require('./config/connection');
+
+//starting express
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+//middleware 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(routes);
+
+
+
+// turning on connection to db and server
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => {
+    console.log(`App listening on port ${PORT}!`);
+  });
