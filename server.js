@@ -26,9 +26,15 @@ app.get('/api/', async (req, res) => {
     try {
         const userData = await User.findAll({
             include: [{ model: Quiz,
-            attributes:['title'],
-            },
-            { model: Score }
+            attributes:[
+                'id',
+                'title'
+            ]},
+            { model: Score,
+            attributes: [
+                'score',
+                'quiz_id'
+            ]}
         ],
         })
         res.json(userData)
@@ -47,33 +53,36 @@ app.get('/api/quiz', async (req, res) => {
 app.get('/api/category', async (req, res) => {
     try {
         const userData = await Category.findAll({
-            include: [{ model: Quiz }],
+            include: [{ model: Quiz,
+            attributes: ['title']
+            }],
         })
         res.json(userData)
     } catch(err) {res.status(500).json(err)}
-
+});
 // END TEST ROUTES 
 // VVV SHEPS WORK BELOW VVV
 
 
-// imports
-const express = require('express');
-const routes = require('./routes');
-const sequelize = require('./config/connection');
+// // imports
+// const express = require('express');
+// const routes = require('./routes');
+// const sequelize = require('./config/connection');
 
-//starting express
-const app = express();
-const PORT = process.env.PORT || 3001;
+// //starting express
+// const app = express();
+// const PORT = process.env.PORT || 3001;
 
-//middleware 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(routes);
+// //middleware 
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+// app.use(routes);
 
 
 
-// turning on connection to db and server
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => {
-    console.log(`App listening on port ${PORT}!`);
-  });
+// // turning on connection to db and server
+// sequelize.sync({ force: false }).then(() => {
+//   app.listen(PORT, () => {
+//     console.log(`App listening on port ${PORT}!`);
+//   });
+// })
