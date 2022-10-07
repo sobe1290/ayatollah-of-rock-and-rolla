@@ -25,9 +25,15 @@ app.get('/api/', async (req, res) => {
     try {
         const userData = await User.findAll({
             include: [{ model: Quiz,
-            attributes:['title'],
-            },
-            { model: Score }
+            attributes:[
+                'id',
+                'title'
+            ]},
+            { model: Score,
+            attributes: [
+                'score',
+                'quiz_id'
+            ]}
         ],
         })
         res.json(userData)
@@ -46,7 +52,9 @@ app.get('/api/quiz', async (req, res) => {
 app.get('/api/category', async (req, res) => {
     try {
         const userData = await Category.findAll({
-            include: [{ model: Quiz }],
+            include: [{ model: Quiz,
+            attributes: ['title']
+            }],
         })
         res.json(userData)
     } catch(err) {res.status(500).json(err)}
