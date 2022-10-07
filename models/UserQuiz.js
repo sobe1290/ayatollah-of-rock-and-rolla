@@ -1,10 +1,12 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const Category = require('./Category');
+const Quiz = require('./Quiz');
+const User = require('./User');
 
-class Quiz extends Model {};
+class UserQuiz extends Model {};
 
-Quiz.init (
+UserQuiz.init (
     {
         id: {
             type: DataTypes.INTEGER,
@@ -12,30 +14,30 @@ Quiz.init (
             primaryKey: true,
             autoIncrement: true
         },
-        title: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        questions: {
-            type: DataTypes.JSON,
-            allowNull: false
-        },
-        category_id: {
+        user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: Category,
+                model: User,
                 key: 'id'
             }
-        }
+        },
+        quiz_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: Quiz,
+                key: 'id'
+            }
+        },
     },
     {
         sequelize,
         timestamps: true,
         freezeTableName: false,
         underscored: true,
-        modelName: 'quiz',
+        modelName: 'user_quiz',
     },
 )
 
-module.exports = Quiz
+module.exports = UserQuiz
