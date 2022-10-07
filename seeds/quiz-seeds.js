@@ -56,6 +56,34 @@ const quizData = [
             }
         ],
         category_id: 2
+    },
+    {
+        title: 'Star Wars Worlds',
+        questions: [
+            {
+                number: 1,
+                question: 'What planet is Luke Skywalker from?',
+                answers: {
+                        a: 'Earth',
+                        b: 'Tatooine',
+                        c: 'Coruscant',
+                        d: 'Dagobah'
+                    },
+                correct: 'Tatooine'
+            },
+            {
+                number: 2,
+                question: "What planet is the center of the Glactic Republic?",
+                answers: {
+                        a: 'Coruscant',
+                        b: 'Naboo',
+                        c: 'Hoth',
+                        d: 'Bespin'
+                    },
+                correct: 'Coruscant'
+            }
+        ],
+        category_id: 2
     }
 ];
 
