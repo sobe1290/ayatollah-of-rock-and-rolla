@@ -2,10 +2,10 @@ const Category = require('../models/Category')
 
 const categoryData = [
     {
-        title: 'Mad-Max: The Road Warrior'
+        title: 'Mad-Max'
     },
     {
-        title: 'Star Wars: Rogue One'
+        title: 'Star Wars'
     }
 ];
 
