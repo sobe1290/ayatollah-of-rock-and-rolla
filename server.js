@@ -60,6 +60,22 @@ app.get('/api/category', async (req, res) => {
         res.json(userData)
     } catch(err) {res.status(500).json(err)}
 });
+
+app.get('/api/scores', async (req, res) => {
+    try {
+        const userData = await Score.findAll({
+            include: [{ model: Quiz,
+            attributes: ['title']
+            },
+            {
+               model: User,
+               attributes: ['user_name']
+            }],
+        })
+        res.json(userData)
+    } catch(err) {res.status(500).json(err)}
+});
+
 // END TEST ROUTES 
 // VVV SHEPS WORK BELOW VVV
 
