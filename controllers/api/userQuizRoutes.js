@@ -1,0 +1,1 @@
+const { UserQuiz } = require('../../models');
