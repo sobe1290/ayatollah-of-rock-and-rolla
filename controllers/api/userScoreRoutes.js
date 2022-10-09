@@ -1,0 +1,1 @@
+const { UserScore } = require('../../models');
