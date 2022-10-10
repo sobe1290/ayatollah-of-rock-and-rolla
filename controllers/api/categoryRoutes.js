@@ -1,6 +1,8 @@
 const { Category } = require('../../models');
 const router = require('express').Router();
 
+//None of these routes currently utilize authentication. Which ones do we need to add authentication to (withAuth)?
+
 //This is the route to call if you need to get all the categories
 router.get('/', async (req, res) => {
     try {
@@ -19,7 +21,7 @@ router.get('/', async (req, res) => {
     }
   });
 
-  //This is the route to call to add a category
+  //This is the route to call to add a category (Required body part: title)
   router.post('/', async (req, res) => {
     try {
       const categoryData = await Category.create({
@@ -37,7 +39,7 @@ router.get('/', async (req, res) => {
     }
   });
 
-  //This is the route to call to delete a category
+  //This is the route to call to delete a category (required url parameter: id)
   router.delete('/:id', (req, res) => {
     Category.destroy({
       where: {
@@ -57,8 +59,8 @@ router.get('/', async (req, res) => {
       });
   });
 
-  //This is the route to call to update a category
-  router.put('/', withAuth, (req, res) => {
+  //This is the route to call to update a category (Required body parts: title, id)
+  router.put('/', (req, res) => {
     Category.update({
       title: req.body.commentBody,
     }, {
