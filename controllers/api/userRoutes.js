@@ -20,6 +20,26 @@ router.get('/', async (req, res) => {
     } catch(err) {console.log(err)}
 });
 
+//GETs specific user by pk
+router.get('/:id', async (req, res) => {
+  try {
+      const userData = await User.findByPk(req.params.id, {
+          include: [{ model: Quiz,
+          attributes:[
+              'id',
+              'title'
+          ]},
+          { model: Score,
+          attributes: [
+              'score',
+              'quiz_id'
+          ]}
+      ],
+      })
+      res.json(userData)
+  } catch(err) {console.log(err)}
+});
+
 //This is the route to call to create a user
 router.post('/createuser', async (req, res) => {
   try {
@@ -38,8 +58,6 @@ router.post('/createuser', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
 
 //This is the route to call when trying to log in. needs username and password.
 router.post('/login', async (req, res) => {
