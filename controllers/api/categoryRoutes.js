@@ -1,5 +1,5 @@
-const { Category } = require('../../models');
 const router = require('express').Router();
+const { User, Quiz, Score, Category } = require('../../models');
 
 //None of these routes currently utilize authentication. Which ones do we need to add authentication to (withAuth)?
 
@@ -7,15 +7,20 @@ const router = require('express').Router();
 router.get('/', async (req, res) => {
     try {
       const categoryData = await Category.findAll({
-        //Include any other tables?
+        include: [{ model: Quiz,
+          attributes: ['title']
+        }],
       }).catch((err) => {
         res.json(err);
       });
-      const categories = categoryData.map((category) => category.get({ plain: true }));
-      res.render('homepage' /*what are we rendering with this route?*/, {
-        categories,
-        logged_in: req.session.logged_in,
-      });
+
+      res.json(categoryData)
+
+      // const categories = categoryData.map((category) => category.get({ plain: true }));
+      // res.render('homepage', { /*what are we rendering with this route?*/
+      //   categories,
+      //   logged_in: req.session.logged_in,
+      // });
     } catch (err) {
       res.status(500).json(err);
     }
