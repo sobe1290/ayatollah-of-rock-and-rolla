@@ -1,0 +1,1 @@
+//fetch, GET all categories
