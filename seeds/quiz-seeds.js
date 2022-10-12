@@ -197,6 +197,62 @@ const quizData = [
         ],
         category_id: 3
     },
+    {
+        title: 'Batman',
+        questions: [
+            {
+                number: 1,
+                question: 'Who is Batmans Alter Ego?',
+                answers: {
+                        a: 'Bruce Banner',
+                        b: 'Bruce Wayne',
+                        c: 'Bruce the Shark',
+                        d: 'Bruce Springstein'
+                    },
+                correct: 'Bruce Wayne'
+            },
+            {
+                number: 2,
+                question: "In Detective Comics #267, a magical Kobold from another dimension decides to help Batman fight crime--what is his name??",
+                answers: {
+                        a: 'Mr. Mxyztplk',
+                        b: 'Martian Hunter',
+                        c: 'Bat-Mite',
+                        d: 'Bat-Dwarf'
+                    },
+                correct: 'Bat-Mite'
+            }
+        ],
+        category_id: 4
+    },
+    {
+        title: 'Superman',
+        questions: [
+            {
+                number: 1,
+                question: "What is Superman's Dogs name?",
+                answers: {
+                        a: 'Krypto',
+                        b: 'Bash',
+                        c: 'Dynomutt',
+                        d: 'K-9'
+                    },
+                correct: 'Krypto'
+            },
+            {
+                number: 2,
+                question: "Who is bald villain in Superman?",
+                answers: {
+                        a: 'Professor X',
+                        b: 'Megamind',
+                        c: 'Lex Luthor',
+                        d: 'Krillin'
+                    },
+                correct: 'Lex Luthor'
+            }
+        ],
+        category_id: 4
+    },
 ];
 
 const seedQuizzes = () => Quiz.bulkCreate(quizData)
