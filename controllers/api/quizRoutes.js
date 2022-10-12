@@ -1,25 +1,107 @@
 const router = require('express').Router();
-const { Category, Quiz, User } = require('../../models');
+const { User, Quiz, Score, Category } = require('../../models');
 
 //None of these routes currently utilize authentication. Which ones do we need to add authentication to (withAuth)?
 
-//This is the route to call if you need to get all the quizzes
+// GETs all available quizzes listing their titles only.
 router.get('/', async (req, res) => {
     try {
       const quizData = await Quiz.findAll({
-        //Include any other tables?
+        attributes: ['title']
       }).catch((err) => {
         res.json(err);
       });
-      const quizzes = quizData.map((quiz) => quiz.get({ plain: true }));
-      res.render('quiz' /*what are we rendering with this route?*/, {
-        quizzes,
-        logged_in: req.session.logged_in,
-      });
+
+      res.json(quizData)
+
+      // const quizzes = quizData.map((quiz) => quiz.get({ plain: true }));
+      // res.render('quiz', { //what are we rendering with this route?
+      //   quizzes,
+      //   logged_in: req.session.logged_in,
+      // });
     } catch (err) {
       res.status(500).json(err);
     }
-  });
+});
+
+// GETS specific quiz by pk
+router.get('/:id', async (req, res) => {
+  try {
+    const quizData = await Quiz.findByPk(req.params.id, {
+      include: [{ model: Score,
+        attributes: ['score'],
+        include: [{ model: User,
+        attributes: ['user_name'] 
+        }] 
+      }]
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+
+    res.json(quizData)
+
+  }
+    catch (err) {
+      res.status(500).json(err);
+    }
+});
+
+// GETs all quiz titles by category id
+router.get('/categories/:id', async (req, res) => {
+  try {
+    const quizData = await Quiz.findAll({
+      where: {
+        category_id: req.params.id
+      },
+      attributes: ['title'],
+      include: [{ model: Category,
+        attributes:['title']
+      }]
+      // include: [{ model: Score,
+      //   attributes: ['score'],
+      //   include: [{ model: User,
+      //   attributes: ['user_name'] 
+      //   }] 
+      // }]
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+
+    res.json(quizData)
+
+  }
+    catch (err) {
+      res.status(500).json(err);
+    }
+});
+
+// GETs scores for all quizzes
+router.get('/highscores', async (req, res) => {
+  try {
+    const hsData = await Quiz.findAll({
+      attributes: ['title'],
+      include: [{ model: Score,
+        include:[{ model: User,
+        attributes: ['user_name'] 
+      }] 
+    }]
+    }).catch((err) => {
+      res.json(err);
+    });
+
+    res.json(hsData)
+
+    // const quizzes = quizData.map((quiz) => quiz.get({ plain: true }));
+    // res.render('quiz', { //what are we rendering with this route?
+    //   quizzes,
+    //   logged_in: req.session.logged_in,
+    // });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 //This is the route to call to add a quiz (Required body part: title, questions, category_id)
 router.post('/', async (req, res) => {

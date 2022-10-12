@@ -1,21 +1,32 @@
-const { Score } = require('../../models');
 const router = require('express').Router();
+const { User, Quiz, Score, Category } = require('../../models');
 
 //None of these routes currently utilize authentication. Which ones do we need to add authentication to (withAuth)?
 
 //This is the route to call if you need to get all the scores
 router.get('/', async (req, res) => {
     try {
-      const scoreData = await Score.findAll({
-        //Include any other tables?
+      const userData = await Score.findAll({
+        include: [{ model: User,
+          attributes: ['user_name', 'power_level']
+        },
+        { model: Quiz,
+            attributes: ['title']
+        }]
+        // { model: User,
+        //   attributes: ['user_name']
+        // }],
       }).catch((err) => {
         res.json(err);
       });
-      const scores = scoreData.map((score) => score.get({ plain: true }));
-      res.render('top scores' /*what are we rendering with this route?*/, {
-        scores,
-        logged_in: req.session.logged_in,
-      });
+
+      res.json(userData)
+
+      // const scores = scoreData.map((score) => score.get({ plain: true }));
+      // res.render('top scores', {  /*what are we rendering with this route?*/
+      //   scores,
+      //   logged_in: req.session.logged_in,
+      // });
     } catch (err) {
       res.status(500).json(err);
     }

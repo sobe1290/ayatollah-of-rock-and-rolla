@@ -2,7 +2,7 @@ const router = require('express').Router();
 const {/* Any Models? */} = require('../models');
 
 //This is the route for the main page
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try{ 
 
         /*Do we need to query and models to go with the homepage?*/

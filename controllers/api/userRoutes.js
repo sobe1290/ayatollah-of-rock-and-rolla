@@ -1,5 +1,24 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Quiz, Score, Category } = require('../../models');
+
+router.get('/', async (req, res) => {
+    try {
+        const userData = await User.findAll({
+            include: [{ model: Quiz,
+            attributes:[
+                'id',
+                'title'
+            ]},
+            { model: Score,
+            attributes: [
+                'score',
+                'quiz_id'
+            ]}
+        ],
+        })
+        res.json(userData)
+    } catch(err) {console.log(err)}
+});
 
 //This is the route to call to create a user
 router.post('/createuser', async (req, res) => {
