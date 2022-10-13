@@ -20,7 +20,8 @@ router.get('/', async (req, res) => {
       //   logged_in: req.session.logged_in,
       // });
     } catch (err) {
-      res.status(500).json(err);
+      res.status(500)
+      console.log(err);
     }
 });
 
@@ -40,6 +41,7 @@ router.get('/:id', async (req, res) => {
     });
 
     res.json(quizData)
+    console.log(quizData)
 
   }
     catch (err) {
@@ -108,15 +110,20 @@ router.post('/', async (req, res) => {
   try {
     const quizData = await Quiz.create({
       title: req.body.title,
-      questions: req.body.title, /* Formatting since they are objects containing objects? */
+      questions: req.body.questions, /* Formatting since they are objects containing objects? 
+      BUILD QUESTIONS AS OBJECTS WITH ANSWERS AS NESTED OBJECTS -- NEXT THE QUESTION OBJECT 
+      INTO A QUIZ OBJECT WITH A TITLE KEY:VALUE PAIR*/
       category_id: req.body.category_id,
     });
 
-    req.session.save(() => {
-      req.session.loggedIn = true;
+    // req.session.save(() => {
+    //   req.session.loggedIn = true;
 
-      res.status(200).json(quizData);
-    });
+    //   res.status(200).json(quizData);
+    // });
+
+    res.status(200).json(quizData);
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -147,7 +154,7 @@ router.delete('/:id', (req, res) => {
 router.put('/', (req, res) => {
   Quiz.update({
       title: req.body.title,
-      questions: req.body.title, /* Formatting since they are objects containing objects? */
+      questions: req.body.questions, /* Formatting since they are objects containing objects? */
       category_id: req.body.category_id,
   }, {
     where: {
@@ -165,6 +172,5 @@ router.put('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-
 
 module.exports = router;
