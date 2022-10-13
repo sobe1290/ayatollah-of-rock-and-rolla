@@ -28,13 +28,14 @@ router.get('/:id', async (req, res) => {
           attributes:[
               'id',
               'title'
-          ]},
-          { model: Score,
-          attributes: [
+          ],
+          include: [{ model: Score,
+            attributes: [
               'score',
               'quiz_id'
-          ]}
-      ],
+            ]
+          }]
+        }],
       })
       res.json(userData)
   } catch(err) {console.log(err)}

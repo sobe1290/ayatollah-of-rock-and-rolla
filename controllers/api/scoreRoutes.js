@@ -7,12 +7,14 @@ const { User, Quiz, Score, Category } = require('../../models');
 router.get('/', async (req, res) => {
     try {
       const userData = await Score.findAll({
-        include: [{ model: User,
-          attributes: ['user_name', 'power_level']
-        },
-        { model: Quiz,
-            attributes: ['title']
-        }]
+
+        include: [
+            { model: Quiz,
+                attributes: ['title']},
+            { model: User,
+                attributes: ['user_name', 'power_level'],
+            }
+        ]
         // { model: User,
         //   attributes: ['user_name']
         // }],

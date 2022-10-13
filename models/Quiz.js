@@ -19,12 +19,6 @@ Quiz.init (
         questions: {
             type: DataTypes.JSON,
             allowNull: false,
-            // get() {
-            //     return JSON.parse(this.getDataValue('questions'))
-            // },
-            // set(value) {
-            //     return this.setDataValue('questions', JSON.stringify(value))
-            // }
         },
         category_id: {
             type: DataTypes.INTEGER,
@@ -34,10 +28,6 @@ Quiz.init (
                 key: 'id'
             }
         },
-        // score_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: true
-        // }
     },
     {
         sequelize,

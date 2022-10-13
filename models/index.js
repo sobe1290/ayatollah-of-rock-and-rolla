@@ -14,11 +14,13 @@ Category.hasMany(Quiz, {
 });
 
 Quiz.belongsToMany(User, {
-    through: UserQuiz
+    through: UserQuiz,
+    foreignKey: 'quiz_id'
 });
 
 User.belongsToMany(Quiz, {
-    through: UserQuiz
+    through: UserQuiz,
+    foreignKey: 'user_id'
 });
 
 Score.belongsTo(User, {
@@ -29,12 +31,12 @@ User.hasMany(Score, {
     foreignKey: 'user_id'
 });
 
-Score.belongsToMany(Quiz, {
-    through: UserScore
+Score.belongsTo(Quiz, {
+    foreignKey: 'quiz_id'
 });
 
-Quiz.belongsToMany(Score, {
-    through: UserScore
+Quiz.hasMany(Score, {
+    foreignKey: 'quiz_id'
 });
 
 

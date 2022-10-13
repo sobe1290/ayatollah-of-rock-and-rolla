@@ -6,6 +6,22 @@ const userQuizData = [
         quiz_id: 1,
     },
     {
+        user_id: 2,
+        quiz_id: 1,
+    },
+    {
+        user_id: 1,
+        quiz_id: 1,
+    },
+    {
+        user_id: 1,
+        quiz_id: 1,
+    },
+    {
+        user_id: 2,
+        quiz_id: 1,
+    },
+    {
         user_id: 1,
         quiz_id: 2,
     },
