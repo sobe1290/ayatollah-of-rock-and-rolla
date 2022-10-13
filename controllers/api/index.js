@@ -8,7 +8,7 @@ const userScoreRoutes = require('./userScoreRoutes');
 
 router.use('/users', userRoutes);
 router.use('/quiz', quizRoutes);
-router.use('/category', categoryRoutes);
+router.use('/categories', categoryRoutes);
 router.use('/score', scoreRoutes);
 router.use('/userquiz', userQuizRoutes);
 router.use('/userscore', userScoreRoutes);
