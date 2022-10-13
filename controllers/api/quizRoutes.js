@@ -154,7 +154,7 @@ router.delete('/:id', (req, res) => {
 router.put('/', (req, res) => {
   Quiz.update({
       title: req.body.title,
-      questions: req.body.title, /* Formatting since they are objects containing objects? */
+      questions: req.body.questions, /* Formatting since they are objects containing objects? */
       category_id: req.body.category_id,
   }, {
     where: {
@@ -172,6 +172,5 @@ router.put('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-
 
 module.exports = router;

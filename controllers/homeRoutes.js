@@ -89,6 +89,57 @@ router.get('/categories/:id', async (req, res) => {
       }
 });
 
+// Get  chosen quiz
+router.get('/quiz/:id', async (req, res) => {
+  try {
+    const quizData = await Quiz.findByPk(req.params.id, {
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+
+    res.json(quizData)
+
+ // res.render('quizzes', { **Render leaderboard for selected quiz **
+    //   categories,
+    //   logged_in: req.session.logged_in,
+    // });
+
+  }
+    catch (err) {
+      res.status(500).json(err);
+    }
+});
+
+// Get high scores for chosen quiz
+router.get('/quiz/:id/leaderboard/', async (req, res) => {
+  try {
+    const quizData = await Quiz.findByPk(req.params.id, {
+      attributes: ['title'],
+      include: [{ model: Score,
+        attributes:['score'],
+        order: ['score', 'DESC'],
+        include: [{ model: User,
+          attributes:['user_name'] 
+        }]
+      }]
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+
+    res.json(quizData)
+
+ // res.render('quizzes', { **Render leaderboard for selected quiz **
+    //   categories,
+    //   logged_in: req.session.logged_in,
+    // });
+
+  }
+    catch (err) {
+      res.status(500).json(err);
+    }
+});
 
 //This is the route to call for the login page
 router.get('/login', (req, res) => {
@@ -109,6 +160,5 @@ if (req.session.logged_in) {
     res.status(404).end();
 }
 });
-
 
 module.exports = router;
