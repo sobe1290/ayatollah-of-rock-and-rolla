@@ -114,21 +114,23 @@ router.get('/quiz/:id', async (req, res) => {
 // Get high scores for chosen quiz
 router.get('/quiz/:id/leaderboard/', async (req, res) => {
   try {
-    const quizData = await Quiz.findByPk(req.params.id, {
-      attributes: ['title'],
-      include: [{ model: Score,
-        attributes:['score'],
-        order: ['score', 'DESC'],
-        include: [{ model: User,
-          attributes:['user_name'] 
-        }]
-      }]
+
+    const scoreData = await Score.findAll({
+      where: { quiz_id: req.params.id },
+      order: [ ['score', 'DESC'] ],
+      include: [ 
+        { model: Quiz,
+        attributes: ['title'] },
+        { model: User,
+         attributes: ['user_name', 'power_level']}
+        ],
+        limit: 5
     })
     .catch((err) => {
       res.json(err);
     });
-
-    res.json(quizData)
+    
+    res.json(scoreData)
 
  // res.render('quizzes', { **Render leaderboard for selected quiz **
     //   categories,

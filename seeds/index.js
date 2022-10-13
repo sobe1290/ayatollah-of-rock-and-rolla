@@ -9,11 +9,11 @@ const sequelize = require('../config/connection')
 
 const createnerdDB = async () => {
     await sequelize.query(
-        'CREATE DATABASE IF NOT EXISTS nerdquiz_db;',
-        function(err,results) {
-            if(err) {console.log(err)}
-            else console.log(results)
-        }
+        'CREATE DATABASE IF NOT EXISTS nerdquiz_db;'
+        // function(err, results) {
+        //     if(err) {console.log(err)}
+        //     else console.log(results)
+        // }
     )
 };
 
