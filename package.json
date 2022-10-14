@@ -8,7 +8,8 @@
     "start": "node server.js",
     "seed": "node seeds/index.js",
     "watch": "nodemon ./server.js",
-    "remove": "node ./devTools/removeDB.js"
+    "remove": "node ./devTools/removeDB.js",
+    "build" : "node ./db/makeDB.js"
   },
   "repository": {
     "type": "git",
