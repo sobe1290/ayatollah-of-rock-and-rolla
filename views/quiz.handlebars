@@ -1,17 +1,23 @@
 {{!-- Receive the quiz from quizRoutes.js --}}
 
 
-{{#each quiz.questions as | question |}}
+{{#each quizData.dataValues.questions as | questions |}}
 <h1>Question: {{question}}</h1>
-    <button id="AnswerOne">{{answers.a}}</button>
-    <button id="AnswerTwo">{{answers.b}}</button>
-    <button id="AnswerThree">{{answers.c}}</button>
-    <button id="AnswerFour">{{answers.d}}</button>
+    <form>
+        <input type="radio" valueid="AnswerOne">{{answers.a}}</input>
+        <input type="radio" valueid="AnswerTwo">{{answers.b}}</input>
+        <input idtype="radio" valueid="AnswerThree">{{answers.c}}</input>
+        <input itype="radio" valuedid="AnswerFour">{{answers.d}}</input>
+        <p id="correctAnswer" class="d-none">{{correct}}</p>
+    </form>
     {{/each}}
 
 
 
+<script src="./js/quiz.js"></script> 
 
+
+<button>Submit</button>
 {{!-- <button id="AnswerOne">{{quiz.question[{{>}}].answers.a}}</button>
 <button id="AnswerTwo">{{quiz.question[{{>}}].answers.b}}</button>
 <button id="AnswerThree">{{quiz.question[{{>}}].answers.c}}</button>
