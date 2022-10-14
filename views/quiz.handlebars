@@ -4,10 +4,10 @@
 {{#each quizData.dataValues.questions as | questions |}}
 <h1>Question: {{question}}</h1>
     <form>
-        <input type="radio" valueid="AnswerOne">{{answers.a}}</input>
-        <input type="radio" valueid="AnswerTwo">{{answers.b}}</input>
-        <input idtype="radio" valueid="AnswerThree">{{answers.c}}</input>
-        <input itype="radio" valuedid="AnswerFour">{{answers.d}}</input>
+        <input type="radio" value="{{answers.a}}" name="questionAnswers" id="AnswerOne">{{answers.a}}</input>
+        <input type="radio" value="{{answers.b}}" name="questionAnswers" id="AnswerTwo">{{answers.b}}</input>
+        <input type="radio" value="{{answers.c}}" name="questionAnswers" id="AnswerThree">{{answers.c}}</input>
+        <input type="radio" value="{{answers.d}}" name="questionAnswers" id="AnswerFour">{{answers.d}}</input>
         <p id="correctAnswer" class="d-none">{{correct}}</p>
     </form>
     {{/each}}

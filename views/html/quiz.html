@@ -60,11 +60,13 @@
                 <div class="col py-3">
                     <form>
                         <!-- bootstrap for ul -->
-                        <input type="radio" id="AnswerOne">{{answers.a}}</input>
-                        <input type="radio" id="AnswerTwo">{{answers.b}}</input>
-                        <input type="radio" id="AnswerThree">{{answers.c}}</input>
-                        <input type="radio" id="AnswerFour">{{answers.d}}</input>
-                        <p id="correctAnswer" class="d-none">{{correct}}</p>
+                       
+                            <input type="radio" value="{{answers.a}}" name="questionAnswers" id="AnswerOne">{{answers.a}}</input>
+                            <input type="radio" value="{{answers.b}}" name="questionAnswers" id="AnswerTwo">{{answers.b}}</input>
+                            <input type="radio" value="{{answers.c}}" name="questionAnswers" id="AnswerThree">{{answers.c}}</input>
+                            <input type="radio" value="{{answers.d}}" name="questionAnswers" id="AnswerFour">{{answers.d}}</input>
+                            <p id="correctAnswer" class="d-none">{{correct}}</p>
+                        
                     </form>
                 </div>
             </div>
