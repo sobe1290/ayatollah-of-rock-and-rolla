@@ -21,7 +21,9 @@ router.get('/', async (req, res) => {
         console.log(activeUser)
         /*Do we need to query and models to go with the homepage?*/
       
-        res.render('homepage'); /*what are we calling the handlebars home page?*/
+        res.status(200).render('landing', {
+          activeUser
+        }); /*what are we calling the handlebars home page?*/
     } catch (err) {
         res.status(500).json(err);
     };   
