@@ -172,7 +172,7 @@ const quizData = [
     {
         title: 'Dune',
         questions: [
-            {
+[            {
                 number: 1,
                 question: 'What is the name of the giant worms from Arrakis?',
                 answers: {
@@ -193,14 +193,14 @@ const quizData = [
                         d: 'Duke Leto Atreides'
                     },
                 correct: 'Paul Atreides'
-            }
+            }]
         ],
         category_id: 3
     },
     {
         title: 'Batman',
         questions: [
-            {
+[            {
                 number: 1,
                 question: 'Who is Batmans Alter Ego?',
                 answers: {
@@ -221,7 +221,7 @@ const quizData = [
                         d: 'Bat-Dwarf'
                     },
                 correct: 'Bat-Mite'
-            }
+            }]
         ],
         category_id: 4
     },

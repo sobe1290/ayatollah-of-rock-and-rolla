@@ -18,7 +18,7 @@ Quiz.init (
         },
         questions: {
             type: DataTypes.JSON,
-            allowNull: false
+            allowNull: false,
         },
         category_id: {
             type: DataTypes.INTEGER,
@@ -28,10 +28,6 @@ Quiz.init (
                 key: 'id'
             }
         },
-        // score_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: true
-        // }
     },
     {
         sequelize,

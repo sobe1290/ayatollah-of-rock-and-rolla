@@ -7,12 +7,14 @@ const { User, Quiz, Score, Category } = require('../../models');
 router.get('/', async (req, res) => {
     try {
       const userData = await Score.findAll({
-        include: [{ model: User,
-          attributes: ['user_name', 'power_level']
-        },
-        { model: Quiz,
-            attributes: ['title']
-        }]
+
+        include: [
+            { model: Quiz,
+                attributes: ['title']},
+            { model: User,
+                attributes: ['user_name', 'power_level'],
+            }
+        ]
         // { model: User,
         //   attributes: ['user_name']
         // }],
@@ -30,8 +32,7 @@ router.get('/', async (req, res) => {
     } catch (err) {
       res.status(500).json(err);
     }
-  });
-
+});
 
 //This is the route to call to add a score (required body parts: score, user_id, quiz_id)
 router.post('/', async (req, res) => {
@@ -51,7 +52,7 @@ router.post('/', async (req, res) => {
         console.log(err);
         res.status(500).json(err);
     }
-    });
+});
 
 //This is the route to call to delete a score (required url parameter: id)
 router.delete('/:id', (req, res) => {
