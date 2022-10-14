@@ -11,11 +11,11 @@ const scoreQuizzesHandler = async (event) => {
         method: 'GET',
     });
         //TO DO: how do we grab the scores just for the selected quiz?
-
+        // query score table via
     try {
         if (response.ok) {
             //TO DO: Grab the location needed to put in replace
-            document.location.replace('/');
+            document.location.replace('/*add in element from shadin */');
         } else {
             alert('Failed to get the scores for this quiz')
         }

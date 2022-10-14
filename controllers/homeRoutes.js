@@ -4,25 +4,25 @@ const {User, Category, Quiz, Score } = require('../models');
 //This is the route for the main page
 router.get('/', async (req, res) => {
     try{ 
-        const activeUser = await User.findByPk(req.session.userID, {
-            include: [{ model: Quiz,
-                attributes:[
-                    'id',
-                    'title'
-                ]},
-                { model: Score,
-                attributes: [
-                    'score',
-                    'quiz_id'
-                ]}
-            ]
-        });
+        // const activeUser = await User.findByPk(req.session.userID, {
+        //     include: [{ model: Quiz,
+        //         attributes:[
+        //             'id',
+        //             'title'
+        //         ]},
+        //         { model: Score,
+        //         attributes: [
+        //             'score',
+        //             'quiz_id'
+        //         ]}
+        //     ]
+        // });
 
-        console.log(activeUser)
+        // console.log(activeUser)
         /*Do we need to query and models to go with the homepage?*/
       
         res.status(200).render('landing', {
-          activeUser
+          //activeUser
         }); /*what are we calling the handlebars home page?*/
     } catch (err) {
         res.status(500).json(err);
