@@ -4,20 +4,22 @@
 {{#each quizData.dataValues.questions as | questions |}}
 <h1>Question: {{question}}</h1>
     <form>
-        <input type="radio" value="{{answers.a}}" name="questionAnswers" id="AnswerOne">{{answers.a}}</input>
-        <input type="radio" value="{{answers.b}}" name="questionAnswers" id="AnswerTwo">{{answers.b}}</input>
-        <input type="radio" value="{{answers.c}}" name="questionAnswers" id="AnswerThree">{{answers.c}}</input>
-        <input type="radio" value="{{answers.d}}" name="questionAnswers" id="AnswerFour">{{answers.d}}</input>
-        <p id="correctAnswer" class="d-none">{{correct}}</p>
+        <input type="radio" value="{{answers.a}}" name="questionAnswers" id="AnswerOne{{number}}">{{answers.a}}</input>
+        <input type="radio" value="{{answers.b}}" name="questionAnswers" id="AnswerTwo{{number}}">{{answers.b}}</input>
+        <input type="radio" value="{{answers.c}}" name="questionAnswers" id="AnswerThree{{number}}">{{answers.c}}</input>
+        <input type="radio" value="{{answers.d}}" name="questionAnswers" id="AnswerFour{{number}}">{{answers.d}}</input>
+        <p id="correctAnswer{{number}}" class="d-none">{{correct}}</p>
     </form>
     {{/each}}
 
 
 
-<script src="./js/quiz.js"></script> 
+<button id="submitBTN">Submit</button>
+
+<script src="/js/quiz.js" type="text/javascript"></script> 
 
 
-<button>Submit</button>
+
 {{!-- <button id="AnswerOne">{{quiz.question[{{>}}].answers.a}}</button>
 <button id="AnswerTwo">{{quiz.question[{{>}}].answers.b}}</button>
 <button id="AnswerThree">{{quiz.question[{{>}}].answers.c}}</button>

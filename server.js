@@ -1,7 +1,6 @@
 // END TEST ROUTES 
 // VVV SHEPS WORK BELOW VVV
 
-
 // imports
 
 const path = require('path');
@@ -25,7 +24,7 @@ app.set('view engine', 'handlebars');
 //middleware 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 // turning on connection to db and server
