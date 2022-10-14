@@ -45,15 +45,17 @@ router.get('/:id', async (req, res) => {
 router.post('/createuser', async (req, res) => {
   try {
     const dbUserData = await User.create({
-      username: req.body.username,
+      user_name: req.body.username,
       password: req.body.password,
+      email: req.body.email,
     });
 
-    req.session.save(() => {
-      req.session.loggedIn = true;
+    // req.session.save(() => {
+    //   req.session.loggedIn = true;
 
-      res.status(200).json(dbUserData);
-    });
+    //   res.status(200).json(dbUserData);
+    // });
+    res.status(200).json(dbUserData);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
