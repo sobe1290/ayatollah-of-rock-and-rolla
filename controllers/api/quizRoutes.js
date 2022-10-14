@@ -39,9 +39,11 @@ router.get('/:id', async (req, res) => {
     .catch((err) => {
       res.json(err);
     });
-
-    res.json(quizData)
-    console.log(quizData)
+    
+    res.status(200).render('quiz', {
+      quizData
+    })
+    
 
   }
     catch (err) {
