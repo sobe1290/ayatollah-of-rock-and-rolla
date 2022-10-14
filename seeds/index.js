@@ -5,17 +5,17 @@ const seedUserQuiz = require('./userQuiz-seeds');
 const seedScores = require('./score-seeds');
 const seedUserScores = require('./userScore-seeds');
 
-const sequelize = require('../config/connection')
+const sequelize = require('../config/connection');
 
-const createnerdDB = async () => {
-    await sequelize.query(
-        'CREATE DATABASE IF NOT EXISTS nerdquiz_db;'
-        // function(err, results) {
-        //     if(err) {console.log(err)}
-        //     else console.log(results)
-        // }
-    )
-};
+// const createnerdDB = async () => {
+//     await sequelize.query(
+//         'CREATE DATABASE IF NOT EXISTS nerdquiz_db;',
+//         function(err, results) {
+//             if(err) {console.log(err)}
+//             else console.log(results)
+//         }
+//     )
+// };
 
 const seedAll = async () => {
     await sequelize.sync({ force: true });
@@ -35,5 +35,5 @@ const seedAll = async () => {
     process.exit(0)
 };
 
-createnerdDB();
+// createnerdDB();
 seedAll();
