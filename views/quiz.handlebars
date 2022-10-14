@@ -1,1 +1,19 @@
 {{!-- Receive the quiz from quizRoutes.js --}}
+
+
+{{#each quiz.questions as | question |}}
+<h1>Question: {{question}}</h1>
+    <button id="AnswerOne">{{answers.a}}</button>
+    <button id="AnswerTwo">{{answers.b}}</button>
+    <button id="AnswerThree">{{answers.c}}</button>
+    <button id="AnswerFour">{{answers.d}}</button>
+    {{/each}}
+
+
+
+
+{{!-- <button id="AnswerOne">{{quiz.question[{{>}}].answers.a}}</button>
+<button id="AnswerTwo">{{quiz.question[{{>}}].answers.b}}</button>
+<button id="AnswerThree">{{quiz.question[{{>}}].answers.c}}</button>
+<button id="AnswerFour">{{quiz.question[{{>}}].answers.d}}</button> --}}
+
