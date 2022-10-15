@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Oswald:wght@600&display=swap');
+
+:root {
+    --main-color: #333533;
+    --secondary-color: #CFDBD5;
+    --alternate-color: #000000;
+    --contrast-1: #F5CB5C;
+    --contrast-2: #3F88C5;
+    --contrast-3: #4DA167;
+    --contrast-4: #A63A50;
+}
+
+header {
+    background-color: var(--main-color);
+    color: var(--contrast-1);
+}
+h1 {
+    font-family: Bungee, sans-serif;
+}
+h2, h3 {
+    font-family: oswald, sans-serif;
+}
+ 
+.btn-color-forest {
+    background-color: var(--contrast-3);
+}
+.btn-color-forest:hover {
+    background-color: var(--contrast-1);
+}
+.btn-color-blue-crayola {
+    background-color: var(--contrast-2);
+}
+.btn-color-blue-crayola:hover {
+    background-color: var(--contrast-1);
+}
