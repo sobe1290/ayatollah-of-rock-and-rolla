@@ -20,7 +20,13 @@ h1 {
 h2, h3 {
     font-family: oswald, sans-serif;
 }
- 
+
+.bg-forest {
+    background-color: var(--contrast-3) !important;
+}
+.bg-blue-crayola {
+    background-color: var(--contrast-2) !important;
+}
 .btn-color-forest {
     background-color: var(--contrast-3);
 }
