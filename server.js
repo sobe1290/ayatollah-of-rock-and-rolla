@@ -27,8 +27,8 @@ const sess = {
   cookie: {
       // maxAge: 5 * 60 * 1000
   },
-  resave: false,
-  saveUninitialized: false,
+  resave: true,
+  saveUninitialized: true,
   store: new SequelizeStore({
       db: sequelize,
   }),
@@ -38,8 +38,8 @@ const sess = {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/public', express.static(path.join(__dirname, 'public')));
-app.use(routes);
 app.use(session(sess))
+app.use(routes);
 
 // turning on connection to db and server
 sequelize.sync({ force: false }).then(() => {
