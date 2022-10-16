@@ -1,4 +1,5 @@
-const router = require('express').Router();
+const express = require('express')
+const router = express.Router();
 const {User, Category, Quiz, Score } = require('../models');
 
 //This is the route for the main page
@@ -148,7 +149,7 @@ router.get('/quiz/:id/leaderboard/', async (req, res) => {
 //This is the route to call for the login page
 router.get('/login', (req, res) => {
     try{ 
-      res.render('login'); /*What are we calling the handlebars page for login?*/
+      res.status(200).render('login'); /*What are we calling the handlebars page for login?*/
   } catch (err) {
       res.status(500).json(err);
   }; 
