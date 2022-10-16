@@ -1,31 +1,32 @@
 //on click submit username and password, Post route
 
-const { response } = require("express");
+//const { response } = require("express");
 
 //grabing the sign in variables from user
-const userName = document.querySelector(/*add in element from shadin */);
-const userPassword = document.querySelector(/*add in element from shadin */);
+const userNameElement = document.querySelector("#username-login");
+const userPasswordElement = document.querySelector("#password-login");
 
 
 // logic to handle log in
 const loginHandler = async (event) => {
     event.preventDefault();
-    const user = userName.trim();
-    const password =userPassword.trim();
-    
-    if (!user && !password) {
-        window.alert("please enter a username AND A password")
-    } else {
-    const response = await fetch('/api/userRoutes', {
-        method: 'POST',
-        body: JSON.stringify({ user, password}),
-        headers: { 'Content-Type': 'application/json'}
-    })};
-// TO DO: find the path for location to the document.
-    if (response.ok) {
-        document.location.replace('/* something goes here */');
-        
-    }
+    // console.log(userNameElement.value);
+    // console.log(userPasswordElement.value);
+
+const response = await fetch('/api/users/login', {
+    method: 'POST',
+    body: JSON.stringify({
+        username: userNameElement.value,
+        password: userPasswordElement.value,
+    }),
+    headers: { 'Content-Type': 'application/json'},
+})
+if (response.ok) {
+    //document.location.replace('/categories')
+    console.log('log in good');
+} else {
+    alert('failed to login')
+}
 };
 
 

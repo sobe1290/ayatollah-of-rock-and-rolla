@@ -1,4 +1,3 @@
-{{!-- Logo on left, banner at the top, Menu under logo, footer --}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,32 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.min.css">
     <!-- Link for testing: -->
-    <link href="../../css/style.css" rel="stylesheet"/>
+    <link href="../../public/css/style.css" rel="stylesheet">
     <!-- Following link is for final handlebars version: -->
     <!-- <link href="css/style.css" rel="stylesheet"/> -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    {{!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> --}}
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    
 </head>
 <body>
-    <header class="d-flex">
+    <header class="d-flex flex-column flex-md-row">
         <!-- Link for testing: -->
-        <img src="../../images/logoMed.png">
+            <img src="../../public/images/logoTrimMed.png" class="img-fluid m-md-4 h-100">
         <!-- Link for final handlebars version -->
         <!-- <img src="images/logoMed.png" -->
-        <div class="d-flex justify-content-center align-items-center flex-column w-100">
-            <h1 class="text-center">NERD KNOWLEDGE QUEST</h1>
-            <h2 class="text-center">The place to prove your nerd know-how</h2>
+        <div class="d-flex justify-content-center align-items-center flex-column p-3 w-100">
+            <h1 class="text-center display-3 display-md-2 ">NERD KNOWLEDGE QUEST</h1>
+            <h2 class="text-center fs-3 fs-md-2">The place to prove your nerd know-how</h2>
         </div>
     </header>
-    <div>
+    <main>
         <div class="container-fluid">
             <div class="row flex-nowrap">
                 <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light">
-                    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white p-h-100">
                         <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-black text-decoration-none">
                             <span class="fs-5 d-none d-sm-inline">Menu</span>
                         </a>
@@ -60,13 +55,8 @@
                 </div>
                 <div class="col py-3">
                     {{{ body }}}
-                    
-                </div>
             </div>
         </div>
-    </div>
-    <main>
-    
     </main>
     <footer>
 
