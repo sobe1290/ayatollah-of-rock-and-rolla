@@ -5,14 +5,14 @@ const signUpFormHandler = async (event) => {
     event.preventDefault();
   
 //TO DO: LOOK up correct location for username and password
-    const username = document.querySelector(/*add in element from shadin */).value.trim();
-    const password = document.querySelector(/*add in element from shadin */).value.trim();
-    const email = document.querySelector(/*add in element from shadin */).value.trim();
+    const usernameElement = document.querySelector("#username-login").value.trim();
+    const passwordElement = document.querySelector("#password-login").value.trim();
+    const emailElement = document.querySelector(/*add in element from shadin */).value.trim();
   
-    if (username && password) {
+    if (usernameElement && passwordElement) {
       const response = await fetch('/api/users', {
         method: 'POST',
-        body: JSON.stringify({ username, password, email }),
+        body: JSON.stringify({ usernameElement, passwordElement, emailElement }),
         headers: { 'Content-Type': 'application/json' },
       });
   
