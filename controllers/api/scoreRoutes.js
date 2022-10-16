@@ -15,9 +15,7 @@ router.get('/', async (req, res) => {
                 attributes: ['user_name', 'power_level'],
             }
         ]
-        // { model: User,
-        //   attributes: ['user_name']
-        // }],
+
       }).catch((err) => {
         res.json(err);
       });
@@ -34,6 +32,29 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Scores by quiz ID, sorted descending, highest scores at top
+router.get('/:id', async (req, res) => {
+    try {
+        const scoreData = await Score.findAll({
+            where: { quiz_id: req.params.id },
+            order: [ ['score', 'DESC'] ],
+            include: [ 
+              { model: Quiz,
+              attributes: ['title'] },
+              { model: User,
+               attributes: ['user_name', 'power_level']}
+              ],
+          })
+          .catch((err) => {
+            res.json(err);
+          });
+          
+          res.json(scoreData)
+    } catch (err) {
+      res.status(500).json(err);
+    }
+});
+
 //This is the route to call to add a score (required body parts: score, user_id, quiz_id)
 router.post('/', async (req, res) => {
     try {
@@ -43,11 +64,8 @@ router.post('/', async (req, res) => {
         quiz_id: req.body.quiz_id,
         });
     
-        req.session.save(() => {
-        req.session.loggedIn = true;
-    
         res.status(200).json(scoreData);
-        });
+
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

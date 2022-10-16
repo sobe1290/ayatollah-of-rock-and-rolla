@@ -3,7 +3,7 @@ const { User, Quiz, Score, Category } = require('../../models');
 
 //None of these routes currently utilize authentication. Which ones do we need to add authentication to (withAuth)?
 
-//This is the route to call if you need to get all the categories
+//This is the route to call if you need to get all the categories, listing titles only
 router.get('/', async (req, res) => {
     try {
       const categoryData = await Category.findAll({
@@ -32,12 +32,6 @@ router.post('/', async (req, res) => {
     const categoryData = await Category.create({
       title: req.body.title,
     });
-
-    // req.session.save(() => {
-    //   req.session.loggedIn = true;
-
-    //   res.status(200).json(categoryData);
-    // });
 
     res.status(200).json(categoryData);
 
