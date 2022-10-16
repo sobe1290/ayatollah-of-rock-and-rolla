@@ -45,16 +45,15 @@ router.get('/:id', async (req, res) => {
 router.post('/createuser', async (req, res) => {
   try {
     const dbUserData = await User.create({
-      user_name: req.body.username,
-      password: req.body.password,
-      email: req.body.email,
+      user_name: req.body.usernameElement,
+      password: req.body.passwordElement,
+      email: req.body.emailElement,
     });
 
-    // req.session.save(() => {
-    //   req.session.loggedIn = true;
-
-    //   res.status(200).json(dbUserData);
-    // });
+     req.session.save(() => {
+     req.session.loggedIn = true;
+     res.status(200).json(dbUserData);
+    });
     res.status(200).json(dbUserData);
   } catch (err) {
     console.log(err);
@@ -64,13 +63,14 @@ router.post('/createuser', async (req, res) => {
 
 //This is the route to call when trying to log in. needs username and password.
 router.post('/login', async (req, res) => {
+    
   try {
     const userData = await User.findOne({ 
       where: { 
-        username: req.body.username 
+        user_name: req.body.username 
       } 
     });
-
+    console.log(userData);
     if (!userData) {
       res
         .status(400)
@@ -79,24 +79,23 @@ router.post('/login', async (req, res) => {
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
-
+    console.log(validPassword);
     if (!validPassword) {
       res
         .status(400)
         .json({ message: 'Incorrect username or password, please try again' });
       return;
     }
-
+    //res.json({message: 'you have to construct more pylons'})
     req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.username = userData.username;
-      req.session.powerLevel = userData.power_level;
+    //   req.session.user_id = userData.dataValues.id;
+    //   req.session.username = userData.dataValues.user_name;
+    //   req.session.powerLevel = userData.dataValues.power_level;
       req.session.logged_in = true;
-
-      res.json({ user: userData, message: 'You are now logged in!' });
+    res.json({ user: userData, message: 'You are now logged in!' });
     });
   } catch (err) {
-    res.status(400).json(err);
+    res.status(420).json(err);
   }
 });
 
