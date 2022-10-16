@@ -172,7 +172,7 @@ const quizData = [
                         a: 'Mulgore',
                         b: 'Valley of Trials',
                         c: 'Eversong Woods',
-                        d: 'Tirisfal Glades'
+                        d: 'Tirisfal Glades '
                     },
                 correct: 'Mulgore'
             },
