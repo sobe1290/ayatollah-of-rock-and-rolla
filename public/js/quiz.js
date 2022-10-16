@@ -1,5 +1,14 @@
 const submitBTN = document.getElementById('submitBTN');
 
+
+//grabing variables for userid, quizid 
+const quizid = document.getElementById('quiz-id').getAttribute('data-quiz');
+//const userid =req.session.user_id;
+//const powerLevel =req.session.powerLevel;
+console.log(userid);
+console.log(quizid);
+console.log(powerLevel);
+
 const checkAnswer = () => {
 
   const selectedAnswerArray = []
@@ -36,6 +45,9 @@ const checkAnswer = () => {
 
     //TODO: Take the score variable value and shoot it to the server, along wth the user ID, and Quiz number (be cautious of the order of operations. Probably needs to be all in an async/await)
 
+    //POST request for score
+
+    // PUT request for user
   }, "1000")
 }
 //on submit, grab total score, add it to Main.handlebars powerlevel and PUT it to User.power_level userRoutes.js
