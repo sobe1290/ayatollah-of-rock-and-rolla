@@ -11,10 +11,7 @@ const userPasswordElement = document.querySelector("#password-login");
 const loginHandler = async (event) => {
     event.preventDefault();
     // const user = userName.trim();
-    // const password =userPassword.trim();
-
-
-    
+    // const password =userPassword.trim();    
 //     if (!user && !password) {
 //         window.alert("please enter a username AND A password")
 //     } else {
