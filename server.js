@@ -21,11 +21,25 @@ const handlebars = expressHandlebars.create({});
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 
+//session
+const sess = {
+  secret: 'powertrip',
+  cookie: {
+      // maxAge: 5 * 60 * 1000
+  },
+  resave: false,
+  saveUninitialized: false,
+  store: new SequelizeStore({
+      db: sequelize,
+  }),
+};
+
 //middleware 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
+app.use(session(sess))
 
 // turning on connection to db and server
 sequelize.sync({ force: false }).then(() => {
