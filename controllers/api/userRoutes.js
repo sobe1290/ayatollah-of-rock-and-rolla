@@ -1,4 +1,5 @@
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
 const { User, Quiz, Score, Category } = require('../../models');
 
 router.get('/', async (req, res) => {
@@ -86,16 +87,20 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect username or password, please try again' });
       return;
     }
-    //res.json({message: 'you have to construct more pylons'})
+    // console.log(userData.id, userData.user_name, userData.power_level)
+
+    // res.status(200).json({message: 'you have to construct more pylons'})
+
     req.session.save(() => {
-    //   req.session.user_id = userData.dataValues.id;
-    //   req.session.username = userData.dataValues.user_name;
-    //   req.session.powerLevel = userData.dataValues.power_level;
-      req.session.logged_in = true;
-    res.json({ user: userData, message: 'You are now logged in!' });
+      req.session.user_id = userData.id;
+      req.session.username = userData.user_name;
+      req.session.powerLevel = userData.power_level;
+      req.session.loggedIn = true;
+      console.log(req.session)
+    res.status(200).json(userData);
     });
   } catch (err) {
-    res.status(420).json(err);
+    res.status(420).json(console.log(err));
   }
 });
 
