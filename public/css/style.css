@@ -27,6 +27,9 @@ h2, h3 {
 .bg-blue-crayola {
     background-color: var(--contrast-2) !important;
 }
+.bg-amaranth {
+    background-color: var(--contrast-4) !important;
+}
 .btn-color-forest {
     background-color: var(--contrast-3);
 }
