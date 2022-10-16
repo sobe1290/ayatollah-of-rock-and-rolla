@@ -40,9 +40,7 @@ router.get('/:id', async (req, res) => {
       res.json(err);
     });
     
-    res.status(200).render('quiz', {
-      quizData
-    })
+    res.status(200).json(quizData)
     
 
   }
@@ -62,12 +60,6 @@ router.get('/categories/:id', async (req, res) => {
       include: [{ model: Category,
         attributes:['title']
       }]
-      // include: [{ model: Score,
-      //   attributes: ['score'],
-      //   include: [{ model: User,
-      //   attributes: ['user_name'] 
-      //   }] 
-      // }]
     })
     .catch((err) => {
       res.json(err);
@@ -81,39 +73,13 @@ router.get('/categories/:id', async (req, res) => {
     }
 });
 
-// GETs scores for all quizzes
-router.get('/highscores', async (req, res) => {
-  try {
-    const hsData = await Quiz.findAll({
-      attributes: ['title'],
-      include: [{ model: Score,
-        include:[{ model: User,
-        attributes: ['user_name'] 
-      }] 
-    }]
-    }).catch((err) => {
-      res.json(err);
-    });
-
-    res.json(hsData)
-
-    // const quizzes = quizData.map((quiz) => quiz.get({ plain: true }));
-    // res.render('quiz', { //what are we rendering with this route?
-    //   quizzes,
-    //   logged_in: req.session.logged_in,
-    // });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 //This is the route to call to add a quiz (Required body part: title, questions, category_id)
 router.post('/', async (req, res) => {
   try {
     const quizData = await Quiz.create({
       title: req.body.title,
       questions: req.body.questions, /* Formatting since they are objects containing objects? 
-      BUILD QUESTIONS AS OBJECTS WITH ANSWERS AS NESTED OBJECTS -- NEXT THE QUESTION OBJECT 
+      BUILD QUESTIONS AS OBJECTS WITH ANSWERS AS NESTED OBJECTS -- NEST THE QUESTION OBJECT 
       INTO A QUIZ OBJECT WITH A TITLE KEY:VALUE PAIR*/
       category_id: req.body.category_id,
     });

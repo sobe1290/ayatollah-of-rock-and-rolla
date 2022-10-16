@@ -52,12 +52,7 @@ router.get('/categories', async (req, res) => {
       });
 
       console.log(categoryData)
-
-      // const categories = categoryData.map((category) => category.get({ plain: true }));
-      // res.render('categories', { **Render all categories on category card**
-      //   categories,
-      //   logged_in: req.session.logged_in,
-      // });
+      res.status(200).render('categories', categoryData)
     } catch (err) {
       res.status(500).json(err);
     }
@@ -81,10 +76,7 @@ router.get('/categories/:id', async (req, res) => {
   
       console.log(quizData)
   
-   // res.render('quizzes', { **Render list of quizzes under selected category**
-      //   categories,
-      //   logged_in: req.session.logged_in,
-      // });
+   res.render('quizzes', quizData);
 
     }
       catch (err) {
@@ -96,17 +88,21 @@ router.get('/categories/:id', async (req, res) => {
 router.get('/quiz/:id', async (req, res) => {
   try {
     const quizData = await Quiz.findByPk(req.params.id, {
+      include: [{ model: Score,
+        attributes: ['score'],
+        include: [{ model: User,
+        attributes: ['user_name'] 
+        }] 
+      }]
     })
     .catch((err) => {
       res.json(err);
     });
-
-    res.json(quizData)
-
- // res.render('quizzes', { **Render leaderboard for selected quiz **
-    //   categories,
-    //   logged_in: req.session.logged_in,
-    // });
+    
+    res.status(200).render('quiz', {
+      quizData
+    })
+    
 
   }
     catch (err) {
@@ -133,12 +129,9 @@ router.get('/quiz/:id/leaderboard/', async (req, res) => {
       res.json(err);
     });
     
-    res.json(scoreData)
+    // res.json(scoreData)
 
- // res.render('quizzes', { **Render leaderboard for selected quiz **
-    //   categories,
-    //   logged_in: req.session.logged_in,
-    // });
+ res.render('leaderboard', scoreData)
 
   }
     catch (err) {
@@ -149,21 +142,20 @@ router.get('/quiz/:id/leaderboard/', async (req, res) => {
 //This is the route to call for the login page
 router.get('/login', (req, res) => {
     try{ 
-      res.status(200).render('login'); /*What are we calling the handlebars page for login?*/
+      res.status(200).render('login');
   } catch (err) {
       res.status(500).json(err);
   }; 
 });
 
+
 //This is the route to call to logout
 router.post('/logout', (req, res) => {
-if (req.session.logged_in) {
-    req.session.destroy(() => {
-    res.status(204).end();
-    });
-} else {
-    res.status(404).end();
-}
+  try{ 
+    res.status(200).render('landing');
+} catch (err) {
+    res.status(500).json(err);
+};
 });
 
 module.exports = router;

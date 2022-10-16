@@ -25,18 +25,13 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
       const userData = await User.findByPk(req.params.id, {
-          include: [{ model: Quiz,
-          attributes:[
-              'id',
-              'title'
-          ],
-          include: [{ model: Score,
+        include: [{ model: Score,
+          where: {user_id: req.params.id},
+          include: { model: Quiz,
             attributes: [
-              'score',
-              'quiz_id'
-            ]
-          }]
-        }],
+              'title'
+            ]} 
+        }]
       })
       res.json(userData)
   } catch(err) {console.log(err)}
@@ -55,8 +50,7 @@ router.post('/createuser', async (req, res) => {
      req.session.loggedIn = true;
      res.status(200).json(dbUserData);
     });
-    res.status(200).json(dbUserData);
-  } catch (err) {
+    } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
@@ -101,6 +95,18 @@ router.post('/login', async (req, res) => {
     });
   } catch (err) {
     res.status(420).json(console.log(err));
+  }
+});
+
+
+//This is the route to call to logout
+router.post('/logout', (req, res) => {
+  if (req.session.logged_in) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+  } else {
+      res.status(404).end();
   }
 });
 
