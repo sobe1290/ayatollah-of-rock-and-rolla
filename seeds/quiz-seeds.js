@@ -2,7 +2,7 @@ const Quiz = require('../models/Quiz')
 
 const quizData = [
     {
-        title: 'Beyond Thunderdome',
+        title: 'Mad Max: Beyond Thunderdome',
         questions: [
             {
                 number: 1,
@@ -30,7 +30,7 @@ const quizData = [
         category_id: 1
     },
     {
-        title: 'Rogue One',
+        title: 'Star Wars : Rogue One',
         questions: [
             {
                 number: 1,
