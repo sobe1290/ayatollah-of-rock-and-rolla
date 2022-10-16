@@ -1,8 +1,8 @@
 {{!-- Receive the quiz from quizRoutes.js --}}
 {{!-- STILL NEEDS STYLING --}}
-
+<h1 id="quiz-id" data-quiz="{{quizData.dataValues.id}}">{{quizData.dataValues.title}}</h1>
 {{#each quizData.dataValues.questions as | questions |}}
-<h1>Question: {{question}}</h1>
+<h2>Question: {{question}}</h2>
     <form>
         <input type="radio" value="{{answers.a}}" name="questionAnswers" id="AnswerOne{{number}}">{{answers.a}}</input>
         <input type="radio" value="{{answers.b}}" name="questionAnswers" id="AnswerTwo{{number}}">{{answers.b}}</input>
@@ -14,7 +14,7 @@
 
 <button id="submitBTN">Submit</button>
 
-<script src="/js/quiz.js" type="text/javascript"></script> 
+<script src="../../public/js/quiz.js" type="text/javascript"></script> 
 
 
 
