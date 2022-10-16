@@ -13,21 +13,21 @@
     <!-- <link href="css/style.css" rel="stylesheet"/> -->
 </head>
 <body>
-    <header class="d-flex">
+    <header class="d-flex flex-column flex-md-row">
         <!-- Link for testing: -->
-        <img src="../../public/images/logoMed.png" class="img-fluid">
+            <img src="../../public/images/logoTrimMed.png" class="img-fluid m-md-4 h-100">
         <!-- Link for final handlebars version -->
         <!-- <img src="images/logoMed.png" -->
-        <div class="d-flex justify-content-center align-items-center flex-column w-100">
-            <h1 class="text-center display-2">NERD KNOWLEDGE QUEST</h1>
-            <h2 class="text-center">The place to prove your nerd know-how</h2>
+        <div class="d-flex justify-content-center align-items-center flex-column p-3 w-100">
+            <h1 class="text-center display-3 display-md-2 ">NERD KNOWLEDGE QUEST</h1>
+            <h2 class="text-center fs-3 fs-md-2">The place to prove your nerd know-how</h2>
         </div>
     </header>
     <main>
         <div class="container-fluid">
             <div class="row flex-nowrap">
                 <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light">
-                    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white p-h-100">
                         <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-black text-decoration-none">
                             <span class="fs-5 d-none d-sm-inline">Menu</span>
                         </a>
@@ -54,49 +54,62 @@
                     </div>
                 </div>
                 <div class="col py-3">
-                    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-                    <!-- The following code is the body for categories page: -->
-
-                    <h3 class="text-center display-3">QUIZ CATEGORIES</h3>
-                    <h4>Please choose a category below</h4>
-
-                    <!-- The following code is the body for categories card: -->                    
-                    <section class="vh-100 gradient-custom">
-                        <div class="container h-100">
-                          <div class="row d-flex  align-items-center h-100">
-                            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                              <div class="card bg-dark bg-amaranth text-black" style="border-radius: 1rem;">
-                                <div class="card-body p-5 text-center">
-                                  <div class=" mb-md-5 mt-md-4 pb-5">
-                                    <h2 class="fw-bold mb-2 text-uppercase">CATEGORY NAME</h2>
-                                    <p class="text-black mb-5">Brief description</p>
-                                  <a class="btn btn lg btn-dark" href="">START QUIZ</a>
-                                </div>
-                              </div>
-                            </div>
+                <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+                <!-- The following code is the body for the category page -->
+                <!-- Do NOT forget closing div tag on line 111 -->
+                <h3 class="text-center display-3 display-md-4 m-3">CATEGORIES</h3>
+                <h4 class="text-center fw-bold fs-4 fs-md-3 fs-lg-2 m-3">Choose a Category</h4>
+                  <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 row-cols-xxl-4 w-100">
+                    <!-- This code is for the category card -->
+                    <div class="col p-3">
+                      <div class="card bg-dark bg-amaranth text-black" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+                          <div class=" mb-md-5 mt-md-4 pb-5">
+                            <h2 class="fw-bold fs-4 fs-md-3 fs-lg-2 mb-2 text-uppercase">CATEGORY NAME</h2>
+                            <p class="text-black mb-5">Brief description</p>
+                            <a class="btn btn lg btn-dark" href="">VIEW QUIZZES</a>
                           </div>
                         </div>
-                      </section>
-                    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-
-                    <!-- Duplicate cards for visualizing final layout -->
-                    <!-- Shadin - please ignore :)  -->
-                    <section class="vh-100 gradient-custom">
-                        <div class="container  h-100">
-                          <div class="row d-flex  align-items-center h-100">
-                            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                              <div class="card bg-dark bg-amaranth text-black" style="border-radius: 1rem;">
-                                <div class="card-body p-5 text-center">
-                                  <div class=" mb-md-5 mt-md-4 pb-5">
-                                    <h2 class="fw-bold mb-2 text-uppercase">CATEGORY NAME</h2>
-                                    <p class="text-black mb-5">Brief description</p>
-                                  <a class="btn btn lg btn-dark" href="">START QUIZ</a>
-                                </div>
-                              </div>
-                            </div>
+                      </div>
+                    </div>
+                    <!-- ^^^^^^ -->
+                    <!-- This code (until line 110) is only for viewing extra cards in html DO NOT INCLUDE -->
+                    <div class="col p-3">
+                      <div class="card bg-dark bg-amaranth text-black" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+                          <div class=" mb-md-5 mt-md-4 pb-5">
+                            <h2 class="fw-bold fs-4 fs-md-3 fs-lg-2 mb-2 text-uppercase">CATEGORY NAME</h2>
+                            <p class="text-black mb-5">Brief description</p>
+                            <a class="btn btn lg btn-dark" href="">VIEW QUIZZES</a>
                           </div>
                         </div>
-                      </section>
+                      </div>
+                    </div>
+                    <div class="col p-3">
+                      <div class="card bg-dark bg-amaranth text-black" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+                          <div class=" mb-md-5 mt-md-4 pb-5">
+                            <h2 class="fw-bold fs-4 fs-md-3 fs-lg-2 mb-2 text-uppercase">CATEGORY NAME</h2>
+                            <p class="text-black mb-5">Brief description</p>
+                            <a class="btn btn lg btn-dark" href="">VIEW QUIZZES</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col p-3">
+                      <div class="card bg-dark bg-amaranth text-black" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+                          <div class=" mb-md-5 mt-md-4 pb-5">
+                            <h2 class="fw-bold fs-4 fs-md-3 fs-lg-2 mb-2 text-uppercase">CATEGORY NAME</h2>
+                            <p class="text-black mb-5">Brief description</p>
+                            <a class="btn btn lg btn-dark" href="">VIEW QUIZZES</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- ^^^^^ -->
+                  </div>
+                <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
                 </div>
             </div>
         </div>

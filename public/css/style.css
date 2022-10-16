@@ -14,10 +14,11 @@ header {
     background-color: var(--main-color);
     color: var(--contrast-1);
 }
+
 h1 {
     font-family: Bungee, sans-serif;
 }
-h2, h3 {
+h2, h3, h4, h5 {
     font-family: oswald, sans-serif;
 }
 
