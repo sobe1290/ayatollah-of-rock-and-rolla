@@ -22,24 +22,44 @@ h2, h3, h4, h5 {
     font-family: oswald, sans-serif;
 }
 
-.bg-forest {
-    background-color: var(--contrast-3) !important;
+/* Background colors */
+.bg-maize {
+    background-color: var(--contrast-1) !important;
 }
 .bg-blue-crayola {
     background-color: var(--contrast-2) !important;
 }
+.bg-forest {
+    background-color: var(--contrast-3) !important;
+}
 .bg-amaranth {
     background-color: var(--contrast-4) !important;
 }
-.btn-color-forest {
-    background-color: var(--contrast-3);
+/* text colors */
+.color-maize {
+    color: var(--contrast-1);
 }
+.color-blue-crayola {
+    color: var(--contrast-2);
+}
+.color-forest {
+    color: var(--contrast-3);
+}
+.color-amaranth {
+    color: var(--contrast-4);
+}
+
+/* button colors */
 .btn-color-forest:hover {
+    background-color: var(--contrast-1);
+}
+.btn-color-blue-crayola:hover {
     background-color: var(--contrast-1);
 }
 .btn-color-blue-crayola {
     background-color: var(--contrast-2);
 }
-.btn-color-blue-crayola:hover {
-    background-color: var(--contrast-1);
+.btn-color-forest {
+    background-color: var(--contrast-3);
 }
+
