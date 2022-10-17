@@ -42,20 +42,16 @@ const checkAnswer = () => {
     console.log(score)
 
     //TODO: Take the score variable value and shoot it to the server, along wth the user ID, and Quiz number 
-    // let updateScore = { 
-    //   score: req.session.powerLevel,
-    //   user_id: req.session.user_id,
-    //   quiz_id: quizid,
-    //  }
+    let updateScore = { 
+      // score: req.session.powerLevel,
+      // user_id: req.session.user_id,
+      quiz_id: quizid,
+     }
 
     const response = await fetch('/api/score', {
       //POST request for score
       method: 'POST',
-      body: JSON.stringify({
-        score: req.session.powerLevel,
-        user_id: req.session.user_id,
-        quiz_id: quizid,
-      }),
+      body: JSON.stringify(updateScore),
       headers: { 'Content-Type': 'application/json' }, 
       })
       if (response.ok) {
