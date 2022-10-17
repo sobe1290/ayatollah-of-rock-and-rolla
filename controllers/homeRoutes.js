@@ -154,7 +154,7 @@ router.get('/quiz/:id/leaderboard/', auth, async (req, res) => {
       res.json(err);
     });
 
- res.render('leaderboard', { scoreData })
+ res.render('scoreScreen', { scoreData })
 
   }
     catch (err) {
