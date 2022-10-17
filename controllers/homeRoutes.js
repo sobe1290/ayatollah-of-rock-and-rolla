@@ -38,14 +38,14 @@ router.get('/signup', async (req, res) => {
 router.get('/categories', async (req, res) => {
     try {
       const categoryData = await Category.findAll({
-        include: [{ model: Quiz,
-          attributes: ['title']
-        }],
+        // include: [{ model: Quiz,
+        //   attributes: ['title']
+        // }],
       }).catch((err) => {
         res.json(err);
       });
 
-      console.log(categoryData)
+      // console.log(categoryData)
       res.status(200).render('categories', {categoryData})
     } catch (err) {
       res.status(500).json(err);
@@ -86,7 +86,7 @@ router.get('/categories/:id', async (req, res) => {
         res.json(err);
       });
   
-   res.render('quizzes', {quizData});
+   res.render('quizzes', {title: quizData.category.title});
 
     }
       catch (err) {
