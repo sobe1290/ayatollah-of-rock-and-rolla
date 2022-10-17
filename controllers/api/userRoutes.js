@@ -98,6 +98,22 @@ router.post('/login', async (req, res) => {
   }
 });
 
+router.put('/update', (req, res) => {
+  try {
+    const updatedUser = User.update({
+      power_level: req.body.power_level,
+    },
+    {
+      where: {id: req.body.user_id}
+    }).catch((err) => {
+      res.json(err);     
+    });
+    if (!updatedUser) {
+      res.status(400).json({message: "I'm honestly just as confused as you are."})
+    }
+    res.status(200).json(updatedUser)
+  } catch(err) {res.status(500).json(err)}
+})
 
 //This is the route to call to logout
 router.post('/logout', (req, res) => {

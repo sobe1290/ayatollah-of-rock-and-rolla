@@ -48,6 +48,7 @@ router.get('/categories', async (req, res) => {
     }
 });
 
+// Gets top 10 users sorted by power level and renders leaderboard page
 router.get('/leaderboard', async (req, res) => {
   try {
     const topUsers = await User.findAll({
