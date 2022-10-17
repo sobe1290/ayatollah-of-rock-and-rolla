@@ -11,9 +11,9 @@ const usersession_id = document.getElementById('user-id').getAttribute('data-use
 
 const checkAnswer = () => {
 
-  console.log(userPowerlevel);
+  console.log(`powerlevel: ${userPowerlevel}`);
   //console.log(usersession_id);
-  console.log(quizid);
+  console.log(`quizID#: ${quizid}`);
   const selectedAnswerArray = []
   const correctAnswerArray = []
     
@@ -62,7 +62,6 @@ const checkAnswer = () => {
       })
       if (response.ok) {
         console.log('post request for score successful')
-        
       }else {
         alert('updating score has failed')
       }
@@ -78,14 +77,28 @@ const checkAnswer = () => {
         console.log('put request for USERS successful')
         
       }else {
-        alert('updating score has failed')
+        alert('updating POwerlevel has failed')
       }
 
-      
+      const postuserquiz =await fetch('api/userquiz',{
+        method: 'POST',
+        body: JSON.stringify ({
+          user_id: usersession_id,
+          quiz_id: quizid,
+        }),
+        headers: { 'Content-Type': 'application/json' }, 
+      })
+      if (postuserquiz.ok) {
+        console.log('POST request for Userquiz successful')
+        
+      }else {
+        alert('updating userquiz has failed')
+      }    
 
      
-    // Post request for userquiz
+   
   }, "1000")
 }
-//on submit, grab total score, add it to Main.handlebars powerlevel and PUT it to User.power_level userRoutes.js
+
+// when hit submitBTN check answer starts
 submitBTN.addEventListener('click', checkAnswer);
