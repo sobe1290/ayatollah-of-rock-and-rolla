@@ -5,15 +5,27 @@
 <p id="user-id" data-usersession="{{user_id}}" class="d-none">{{user_id}}</p>
 <p id="powerLevel" data-powerlevel="{{powerLevel}}" class="d-none">{{powerLevel}}</p>
 {{#each quizData.dataValues.questions as | questions |}}
-<h2>Question: {{question}}</h2>
+<h2 class="pt-3">{{question}}</h2>
 
-    <form>
-        <input type="radio" value="{{answers.a}}" name="questionAnswers" id="AnswerOne{{number}}">{{answers.a}}</input>
-        <input type="radio" value="{{answers.b}}" name="questionAnswers" id="AnswerTwo{{number}}">{{answers.b}}</input>
-        <input type="radio" value="{{answers.c}}" name="questionAnswers" id="AnswerThree{{number}}">{{answers.c}}</input>
-        <input type="radio" value="{{answers.d}}" name="questionAnswers" id="AnswerFour{{number}}">{{answers.d}}</input>
-        <p id="correctAnswer{{number}}" name="correctAnswer" class="d-none">{{correct}}</p>
-    </form>
+<form>
+    <div>
+        <input type="radio" value="{{answers.a}}" class="form-check-input" name="questionAnswers" id="AnswerOne{{number}}">{{answers.a}}</input>
+        <label class="form-check-label" for="AnswerOne{{number}}"></label>
+    </div>
+    <div>
+        <input type="radio" value="{{answers.b}}" class="form-check-input" name="questionAnswers" id="AnswerTwo{{number}}">{{answers.b}}</input>
+        <label class="form-check-label" for="AnswerTwo{{number}}"></label>
+    </div>
+    <div>
+        <input type="radio" value="{{answers.c}}" class="form-check-input" name="questionAnswers" id="AnswerThree{{number}}">{{answers.c}}</input>
+        <label class="form-check-label" for="AnswerThree{{number}}"></label>
+    </div>
+    <div>
+        <input type="radio" value="{{answers.d}}" class="form-check-input" name="questionAnswers" id="AnswerFour{{number}}">{{answers.d}}</input>
+        <label class="form-check-label" for="AnswerFour{{number}}"></label>        
+    </div>
+</form>
+    <p id="correctAnswer{{number}}" name="correctAnswer" class="d-none">{{correct}}</p>
     {{/each}}
 
 <button id="submitBTN">Submit</button>
