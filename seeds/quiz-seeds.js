@@ -26,42 +26,101 @@ const quizData = [
                         d: 'Chicago'
                     },
                 correct: 'Bartertown'
-            }
-        ],
-        category_id: 1
-    },
-    {
-        title: 'Star Wars : Rogue One',
-        description: 'Rogue One, a Star Wars story.',
-        questions: [
-            {
-                number: 1,
-                question: 'What is the name of the primary protaginist',
-                answers: {
-                        a: 'Chewbacca',
-                        b: 'Han Solo',
-                        c: 'Jyn',
-                        d: 'Boba Fett'
-                    },
-                correct: 'Jyn'
             },
             {
-                number: 2,
-                question: "What type of stolen Imperial ship earns the call sign 'Rogue One'?",
+                number: 3,
+                question: '',
                 answers: {
-                        a: 'Star Destroyer',
-                        b: 'Cargo shuttle',
-                        c: 'tie Fighter',
-                        d: 'AT-ST'
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
                     },
-                correct: 'Cargo Shuttle'
-            }
+                correct: ''
+            },
+            {
+                number: 4,
+                question: "",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 5,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 6,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 7,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 8,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 9,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 10,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
         ],
         category_id: 1
     },
     {
-        title: 'Star Wars Worlds',
-        description: 'How well do you know the planets of the Star Wars Universe?',
+        title: 'Star Wars',
+        description: 'How well do you know the Star Wars Universe?',
         questions: [
             {
                 number: 1,
@@ -84,13 +143,102 @@ const quizData = [
                         d: 'Bespin'
                     },
                 correct: 'Coruscant'
-            }
+            },
+            {
+                number: 3,
+                question: 'What is the name of the primary protaginist in Rogue One?',
+                answers: {
+                        a: 'Chewbacca',
+                        b: 'Han Solo',
+                        c: 'Jyn',
+                        d: 'Boba Fett'
+                    },
+                correct: 'Jyn'
+            },
+            {
+                number: 4,
+                question: "What type of stolen Imperial ship earns the call sign 'Rogue One'?",
+                answers: {
+                        a: 'Star Destroyer',
+                        b: 'Cargo shuttle',
+                        c: 'tie Fighter',
+                        d: 'AT-ST'
+                    },
+                correct: 'Cargo Shuttle'
+            },
+            {
+                number: 5,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 6,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 7,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 8,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 9,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 10,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            
         ],
         category_id: 1
     },
     {
         title: 'World of Warcraft',
-        description: 'Generic description',
+        description: "For the Alliance or Lok'tar Ogar?",
         questions: [
             {
                 number: 1,
@@ -347,7 +495,95 @@ const quizData = [
                         d: 'May 9th'
                     },
                 correct: 'Sept 22nd'
-            }
+            },
+            {
+                number: 3,
+                question: '',
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 4,
+                question: "",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 5,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 6,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 7,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 8,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 9,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 10,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
         ],
         category_id: 3
     },
@@ -376,7 +612,95 @@ const quizData = [
                         d: 'Duke Leto Atreides'
                     },
                 correct: 'Paul Atreides'
-            }
+            },
+            {
+                number: 3,
+                question: '',
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 4,
+                question: "",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 5,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 6,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 7,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 8,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 9,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 10,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
         ],
         category_id: 3
     },
@@ -405,7 +729,95 @@ const quizData = [
                         d: 'Bat-Dwarf'
                     },
                 correct: 'Bat-Mite'
-            }
+            },
+            {
+                number: 3,
+                question: '',
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 4,
+                question: "",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 5,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 6,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 7,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 8,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 9,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 10,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
         ],
         category_id: 4
     },
@@ -434,7 +846,95 @@ const quizData = [
                         d: 'Krillin'
                     },
                 correct: 'Lex Luthor'
-            }
+            },
+            {
+                number: 3,
+                question: '',
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 4,
+                question: "",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 5,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 6,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 7,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 8,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 9,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
+            {
+                number: 10,
+                question: "?",
+                answers: {
+                        a: '',
+                        b: '',
+                        c: '',
+                        d: ''
+                    },
+                correct: ''
+            },
         ],
         category_id: 4
     },
