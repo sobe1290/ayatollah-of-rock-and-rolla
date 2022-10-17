@@ -1,14 +1,13 @@
 <div class="col p-3">
-     {{#each categoryData as |category|}}
+   {{log title}}
     <div class="card bg-dark bg-amaranth text-black" style="border-radius: 1rem;">
     <div class="card-body p-5 text-center">
         <div class=" mb-md-5 mt-md-4 pb-5">
-        <h2 class="fw-bold fs-4 fs-md-3 fs-lg-2 mb-2 text-uppercase">{{category.title}}</h2>
-        <p class="text-black mb-5">{{category.description}}</p>
+        <h2 class="fw-bold fs-4 fs-md-3 fs-lg-2 mb-2 text-uppercase">{{title}}</h2>
+        {{!-- <p class="text-black mb-5">{{category.description}}</p> --}}
         {{!-- MAKE SURE TO EDIT HREF TO LINK TO CORRESSPONDING QUIZ PAGE --}}
         <a class="btn btn lg btn-dark" id="CategoryBtn" href="views/quizzes.handlebars">VIEW QUIZZES</a> 
         </div>
     </div>
     </div>
-    {{/each}}
 </div>
