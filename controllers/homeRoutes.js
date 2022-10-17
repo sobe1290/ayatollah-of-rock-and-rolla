@@ -31,6 +31,14 @@ router.get('/', async (req, res) => {
    
 });
 
+router.get('/account', async (req, res) => {
+  try {
+    const activeUser = await User.findByPk(req.session.user_id);
+    res.status(200).render('account', {activeUser})
+  }
+  catch(err) {res.status(500).json(err)}
+})
+
 //This is the route to call for the sign up page
 router.get('/signup', async (req, res) => {
     try{ 
@@ -147,7 +155,6 @@ router.get('/login', (req, res) => {
       res.status(500).json(err);
   }; 
 });
-
 
 //This is the route to call to logout
 router.post('/logout', (req, res) => {
