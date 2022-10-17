@@ -2,8 +2,8 @@ const Quiz = require('../models/Quiz')
 
 const quizData = [
     {
-        title: 'Mad Max: Beyond Thunderdome',
-        description: 'A quiz about the 1985 classic: "Mad Max: Boyond Thunderdome". Two men enter! One man leaves!',
+        title: 'Mad Max',
+        description: 'A quiz about the Max Max series. Two men enter! One man leaves!',
         questions: [
             {
                 number: 1,
@@ -29,91 +29,91 @@ const quizData = [
             },
             {
                 number: 3,
-                question: '',
+                question: 'Some of the things Nightrider yells over the radio are lyrics from what band?',
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'AC/DC',
+                        b: 'Metallica',
+                        c: 'Black Sabbath',
+                        d: 'Poison'
                     },
-                correct: ''
+                correct: 'AC/DC'
             },
             {
                 number: 4,
-                question: "",
+                question: "What was the name of Immortan Joe's car?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Buggy #9',
+                        b: 'Plymouth Rock',
+                        c: 'War Rig',
+                        d: 'The Gigahorse'
                     },
-                correct: ''
+                correct: 'The Gigahorse'
             },
             {
                 number: 5,
-                question: "?",
+                question: "What was the name of Charlize Theron's character in Fury Road?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Toast the Knowing',
+                        b: 'Imperator Furiosa',
+                        c: 'The Splendid Angharad',
+                        d: 'The Dag'
                     },
-                correct: ''
+                correct: 'Imperator Furiosa'
             },
             {
                 number: 6,
-                question: "?",
+                question: "What kind of car did Max drive in the original 1973 movie?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Chevrolet Chevelle SS',
+                        b: 'Mercury Montego GT',
+                        c: 'Plymouth Scamp 340',
+                        d: 'Ford XB GT Falcon'
                     },
-                correct: ''
+                correct: 'Ford XB GT Falcon'
             },
             {
                 number: 7,
-                question: "?",
+                question: "What do the War Boys huff on the road to Valhalla?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Chrome Spray Paint',
+                        b: 'Narcan',
+                        c: 'Meth-in-a-can',
+                        d: 'Stimpack'
                     },
-                correct: ''
+                correct: 'Chrome Spray Paint'
             },
             {
                 number: 8,
-                question: "?",
+                question: "How many lines of dialogue does Mel Gibson have in The Road Warrior?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: '76',
+                        b: '22',
+                        c: '16',
+                        d: '54'
                     },
-                correct: ''
+                correct: '16'
             },
             {
                 number: 9,
-                question: "?",
+                question: "How did War Boy, Nux, refer to Max?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Slave',
+                        b: 'Body Bag',
+                        c: 'Blood Bag',
+                        d: 'Meat'
                     },
-                correct: ''
+                correct: 'Blood Bag'
             },
             {
                 number: 10,
-                question: "?",
+                question: "In Beyond Thunderdome, which of these was not an outcome on the Wheel?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Death',
+                        b: 'Acquittal',
+                        c: "Aunty's Choice",
+                        d: 'Monetary Fine'
                     },
-                correct: ''
+                correct: 'Monetary Fine'
             },
         ],
         category_id: 1
