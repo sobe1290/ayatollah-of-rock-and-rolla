@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
         const userQuizData = await UserQuiz.create({
             user_id: req.body.user_id,
             quiz_id: req.body.quiz_id
-        });
+        }).catch((err) => {res.status(400).json(err)})
         res.status(200).json(userQuizData)
     }
     catch(err) {res.status(500).json(err)}
