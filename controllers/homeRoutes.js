@@ -46,7 +46,7 @@ router.get('/categories', async (req, res) => {
       });
 
       // console.log(categoryData)
-      res.status(200).render('categories', {categoryData})
+      res.status(200).render('categories', { categoryData })
     } catch (err) {
       res.status(500).json(err);
     }
@@ -77,7 +77,10 @@ router.get('/categories/:id', async (req, res) => {
         where: {
           category_id: req.params.id
         },
-        attributes: ['title'],
+        attributes: [
+          'title',
+          'id'
+        ],
         include: [{ model: Category,
           attributes:['title']
         }]
@@ -86,7 +89,7 @@ router.get('/categories/:id', async (req, res) => {
         res.json(err);
       });
   
-   res.render('quizzes', {title: quizData.category.title});
+   res.render('quizzes', { quizData });
 
     }
       catch (err) {
