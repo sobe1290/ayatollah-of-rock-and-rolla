@@ -1,0 +1,8 @@
+
+{{#each activeUser.scores}}
+    <p>{{dataValues.score}}</p>
+    <p>{{format_date dataValues.createdAt}}</p>
+    <p>{{format_time dataValues.createdAt}}</p>
+    <p>{{dataValues.quiz.dataValues.title}}</p>
+    <p>{{dataValues.quiz.dataValues.category.dataValues.title}}</p>
+{{/each}}
