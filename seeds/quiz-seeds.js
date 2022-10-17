@@ -498,91 +498,91 @@ const quizData = [
             },
             {
                 number: 3,
-                question: '',
+                question: 'What is inscribed over the west door of Moria',
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'One does not simply walk into Mordor.',
+                        b: 'No one tosses a dwarf!',
+                        c: 'Tumne talmar rahtaine nixenen umir',
+                        d: 'Ennyn Durin Aran Moria. Pedo Mellon a Minno. Im Narvi hain echant.'
                     },
-                correct: ''
+                correct: 'Ennyn Durin Aran Moria. Pedo Mellon a Minno. Im Narvi hain echant.'
             },
             {
                 number: 4,
-                question: "",
+                question: "Who possessed the Horn of Gondor",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Boromir',
+                        b: 'Aragorn',
+                        c: 'Legolas',
+                        d: 'Gandalf'
                     },
-                correct: ''
+                correct: 'Boromir'
             },
             {
                 number: 5,
-                question: "?",
+                question: "Where is Galadriel from?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Moria',
+                        b: 'Plains of Rohan',
+                        c: 'The Shire',
+                        d: 'Valinor'
                     },
-                correct: ''
+                correct: 'Valinor'
             },
             {
                 number: 6,
-                question: "?",
+                question: "Who sings a song that starts 'Hey dol! merry dol! ring a dong dillo!'",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Gandalf',
+                        b: 'Frodo Baggins',
+                        c: 'Tom Bombadil',
+                        d: 'Sam Gamgee'
                     },
-                correct: ''
+                correct: 'Tom Bombadil'
             },
             {
                 number: 7,
-                question: "?",
+                question: "What is the name of Aragorn's sword?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Anduril',
+                        b: 'Sting',
+                        c: 'Hadhafang',
+                        d: 'Gurthang'
                     },
-                correct: ''
+                correct: 'Anduril'
             },
             {
                 number: 8,
-                question: "?",
+                question: "What was Gollum's real name?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Deagol',
+                        b: 'Azog',
+                        c: 'Marcho',
+                        d: 'Smeagol'
                     },
-                correct: ''
+                correct: 'Smeagol'
             },
             {
                 number: 9,
-                question: "?",
+                question: "What is inscribed on the One Ring?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them.',
+                        b: "Troll's old seat is still the same, And the bone he boned from its owner!",
+                        c: 'Now for wrath, now for ruin and a red nightfall!',
+                        d: 'To Isengard with doom we come!'
                     },
-                correct: ''
+                correct: 'One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them.'
             },
             {
                 number: 10,
-                question: "?",
+                question: "Who kills the Lord of the Nazgul?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Arwen',
+                        b: 'Eomer',
+                        c: 'Eowyn',
+                        d: 'Theoden'
                     },
-                correct: ''
+                correct: 'Eowyn'
             },
         ],
         category_id: 3
