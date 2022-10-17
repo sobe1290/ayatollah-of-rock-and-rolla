@@ -3,11 +3,9 @@ const submitBTN = document.getElementById('submitBTN');
 
 //grabing variables for userid, quizid 
 const quizid = document.getElementById('quiz-id').getAttribute('data-quiz');
-//const userid =req.session.user_id;
-//const powerLevel =req.session.powerLevel;
-console.log(userid);
-console.log(quizid);
-console.log(powerLevel);
+
+
+
 
 const checkAnswer = () => {
 
@@ -32,20 +30,40 @@ const checkAnswer = () => {
     })
 
     //This part compares the two arrays and makes a new array with only the correct answers 
-  setTimeout(() => {
+  setTimeout(async () => {
     const matchingAnswers = selectedAnswerArray.filter(function (obj) {
       return correctAnswerArray.indexOf(obj) !== -1;
       
     })
 
-    //This part looks at how many items are in the mathing array, and adds 10 to the "score" variable
     console.log(matchingAnswers)
-    let score = matchingAnswers.length * Math.ceil(Math.random()*10) + matchingAnswers.length
+    //creates score based on how many questions answered correctly
+    let score = matchingAnswers.length*10
     console.log(score)
 
-    //TODO: Take the score variable value and shoot it to the server, along wth the user ID, and Quiz number (be cautious of the order of operations. Probably needs to be all in an async/await)
+    //TODO: Take the score variable value and shoot it to the server, along wth the user ID, and Quiz number 
+    let updateScore = { 
+      // score: req.session.powerLevel,
+      // user_id: req.session.user_id,
+      quiz_id: quizid,
+     }
 
-    //POST request for score
+    const response = await fetch('/api/score', {
+      //POST request for score
+      method: 'POST',
+      body: JSON.stringify(updateScore),
+      headers: { 'Content-Type': 'application/json' }, 
+      })
+      if (response.ok) {
+        console.log('post request successful')
+        console.log(req.session.user_id);
+        console.log(quizid);
+        console.log(req.session.powerLevel);
+      }else {
+        alert('updating score has failed')
+
+      }
+
 
     // PUT request for user
   }, "1000")
