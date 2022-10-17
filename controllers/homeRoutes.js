@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router();
 const {User, Category, Quiz, Score } = require('../models');
+const auth = require('../utils/auth')
 
 //This is the route for the main page
 router.get('/', async (req, res) => {
@@ -13,14 +14,11 @@ router.get('/', async (req, res) => {
    
 });
 
-router.get('/account', async (req, res) => {
+router.get('/account',auth, async (req, res) => {
   try {
     const activeUser = await User.findByPk(req.session.user_id);
-    res.status(200).render('account', 
-    {
-      user_name: activeUser.user_name,
-      powerLevel: req.session.powerLevel,
-    })
+    res.status(200).render('account', { activeUser }
+    )
   }
   catch(err) {res.status(500).json(err)}
 })
@@ -35,7 +33,7 @@ router.get('/signup', async (req, res) => {
 });
 
 // get all categories to render to page.
-router.get('/categories', async (req, res) => {
+router.get('/categories', auth, async (req, res) => {
     try {
       const categoryData = await Category.findAll({
         // include: [{ model: Quiz,
@@ -71,7 +69,7 @@ router.get('/leaderboard', async (req, res) => {
 })
 
 // Get all quizzes under chosen category.
-router.get('/categories/:id', async (req, res) => {
+router.get('/categories/:id', auth, async (req, res) => {
     try {
       const quizData = await Quiz.findAll({
         where: {
@@ -89,7 +87,7 @@ router.get('/categories/:id', async (req, res) => {
         res.json(err);
       });
   
-   res.render('quizzes', { quizData });
+   res.render('quizzes', auth, { quizData });
 
     }
       catch (err) {
@@ -98,7 +96,7 @@ router.get('/categories/:id', async (req, res) => {
 });
 
 // Get  chosen quiz
-router.get('/quiz/:id', async (req, res) => {
+router.get('/quiz/:id', auth, async (req, res) => {
   try {
     const quizData = await Quiz.findByPk(req.params.id, {
       include: [{ model: Score,
@@ -127,7 +125,7 @@ router.get('/quiz/:id', async (req, res) => {
 });
 
 // Get high scores for chosen quiz
-router.get('/quiz/:id/leaderboard/', async (req, res) => {
+router.get('/quiz/:id/leaderboard/', auth, async (req, res) => {
   try {
 
     const scoreData = await Score.findAll({
@@ -145,7 +143,7 @@ router.get('/quiz/:id/leaderboard/', async (req, res) => {
       res.json(err);
     });
 
- res.render('leaderboard', {scoreData})
+ res.render('leaderboard', { scoreData })
 
   }
     catch (err) {
