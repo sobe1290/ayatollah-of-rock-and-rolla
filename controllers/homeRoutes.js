@@ -5,26 +5,8 @@ const {User, Category, Quiz, Score } = require('../models');
 //This is the route for the main page
 router.get('/', async (req, res) => {
     try{ 
-        // const activeUser = await User.findByPk(req.session.userID, {
-        //     include: [{ model: Quiz,
-        //         attributes:[
-        //             'id',
-        //             'title'
-        //         ]},
-        //         { model: Score,
-        //         attributes: [
-        //             'score',
-        //             'quiz_id'
-        //         ]}
-        //     ]
-        // });
-
-        // console.log(activeUser)
-        /*Do we need to query and models to go with the homepage?*/
-      
-        res.status(200).render('landing', {
-          //activeUser
-        }); /*what are we calling the handlebars home page?*/
+     
+        res.status(200).render('landing'); 
     } catch (err) {
         res.status(500).json(err);
     };   
@@ -43,7 +25,7 @@ router.get('/account', async (req, res) => {
 //This is the route to call for the sign up page
 router.get('/signup', async (req, res) => {
     try{ 
-        res.render('signup'); /*What are we calling the handlebars page for signup?*/
+        res.render('signup'); 
     } catch (err) {
         res.status(500).json(err);
     };  
@@ -61,13 +43,31 @@ router.get('/categories', async (req, res) => {
       });
 
       console.log(categoryData)
-      res.status(200).render('categories', categoryData)
+      res.status(200).render('categories', {categoryData})
     } catch (err) {
       res.status(500).json(err);
     }
 });
 
- // Get all quizzes under chosen category.
+// Gets top 10 users sorted by power level and renders leaderboard page
+router.get('/leaderboard', async (req, res) => {
+  try {
+    const topUsers = await User.findAll({
+      order: [ ['power_level', 'DESC'] ],
+      attributes: [
+        'user_name',
+        'power_level'
+      ],
+      limit: 10
+    }).catch((err) => {
+      res.json(err);
+    });
+    res.status(200).render('leaderboard', { topUsers })
+  }
+  catch(err) {res.status(500).json(err)}
+})
+
+// Get all quizzes under chosen category.
 router.get('/categories/:id', async (req, res) => {
     try {
       const quizData = await Quiz.findAll({
@@ -83,9 +83,7 @@ router.get('/categories/:id', async (req, res) => {
         res.json(err);
       });
   
-      console.log(quizData)
-  
-   res.render('quizzes', quizData);
+   res.render('quizzes', {quizData});
 
     }
       catch (err) {
@@ -109,7 +107,10 @@ router.get('/quiz/:id', async (req, res) => {
     });
     
     res.status(200).render('quiz', {
-      quizData
+      quizData, 
+      user_id: req.session.user_id,
+      powerLevel: req.session.powerLevel,
+       
     })
     
 
@@ -137,10 +138,8 @@ router.get('/quiz/:id/leaderboard/', async (req, res) => {
     .catch((err) => {
       res.json(err);
     });
-    
-    // res.json(scoreData)
 
- res.render('leaderboard', scoreData)
+ res.render('leaderboard', {scoreData})
 
   }
     catch (err) {
