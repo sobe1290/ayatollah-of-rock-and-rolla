@@ -117,7 +117,7 @@ router.put('/update', (req, res) => {
 
 //This is the route to call to logout
 router.post('/logout', (req, res) => {
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
       req.session.destroy(() => {
         res.status(204).end();
       });
