@@ -52,6 +52,10 @@ router.get('/leaderboard', async (req, res) => {
   try {
     const topUsers = await User.findAll({
       order: [ ['power_level', 'DESC'] ],
+      attributes: [
+        'user_name',
+        'power_level'
+      ],
       limit: 10
     }).catch((err) => {
       res.json(err);
