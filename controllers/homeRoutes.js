@@ -17,7 +17,10 @@ router.get('/account', async (req, res) => {
   try {
     const activeUser = await User.findByPk(req.session.user_id);
     res.status(200).render('account', 
-    {activeUser})
+    {
+      activeUser,
+      powerLevel: req.session.powerLevel,
+    })
   }
   catch(err) {res.status(500).json(err)}
 })
