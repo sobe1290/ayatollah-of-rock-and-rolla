@@ -109,6 +109,94 @@ const quizData = [
                         d: 'Paladin'
                     },
                 correct: 'Warrior'
+            },
+            {
+                number: 3,
+                question: 'What is the Alliance capital city?',
+                answers: {
+                        a: 'Stormwind',
+                        b: 'Ironforge',
+                        c: 'Darnassus',
+                        d: 'Exodar'
+                    },
+                correct: 'Stormwind'
+            },
+            {
+                number: 4,
+                question: 'What is the Horde captial city?',
+                answers: {
+                        a: 'Thunderbluff',
+                        b: 'Ogrimmar',
+                        c: 'The Undercity',
+                        d: "Quel'Thalas"
+                    },
+                correct: 'Ogrimmar'
+            },
+            {
+                number: 5,
+                question: 'Who was the antagonist of The Burning Crusade',
+                answers: {
+                        a: 'Ragnaros',
+                        b: 'Grom Hellscream',
+                        c: 'Illidan Stormrage',
+                        d: 'Deathwing'
+                    },
+                correct: 'Illidan Stormrage'
+            },
+            {
+                number: 6,
+                question: 'What the the name of the protagonist from the Warcraft Movie?',
+                answers: {
+                        a: 'Arthas Menethil',
+                        b: 'Anduin Lothar',
+                        c: 'Jaina Proudmoore',
+                        d: 'Anduin Wrynn'
+                    },
+                correct: 'Anduin Lothar'
+            },
+            {
+                number: 7,
+                question: 'Who is the broodmother of the Black Dragonflight?',
+                answers: {
+                        a: 'Sintharia',
+                        b: 'Deathwing',
+                        c: 'Sindragosa',
+                        d: 'Onyxia'
+                    },
+                correct: 'Onyxia'
+            },
+            {
+                number: 8,
+                question: 'What is the starting zone of the Tauren?',
+                answers: {
+                        a: 'Mulgore',
+                        b: 'Valley of Trials',
+                        c: 'Eversong Woods',
+                        d: 'Tirisfal Glades '
+                    },
+                correct: 'Mulgore'
+            },
+            {
+                number: 9,
+                question: 'What was the plague that nearly wiped out the World of Warcraft?',
+                answers: {
+                        a: 'Infected Wounds',
+                        b: 'Curse of Agony',
+                        c: 'Virulent Plague',
+                        d: 'Corrupted Blood'
+                    },
+                correct: 'Corrupted Blood'
+            },
+            {
+                number: 10,
+                question: 'On what planet is most of the action in WoW set?',
+                answers: {
+                        a: 'Argus',
+                        b: 'Azeroth',
+                        c: 'Draenor',
+                        d: 'Mardum'
+                    },
+                correct: 'Azeroth'
             }
         ],
         category_id: 2

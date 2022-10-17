@@ -11,27 +11,23 @@
     <link href="../../public/css/style.css" rel="stylesheet"/>
     <!-- Following link is for final handlebars version: -->
     <!-- <link href="css/style.css" rel="stylesheet"/> -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    
 </head>
 <body>
-    <header class="d-flex">
+    <header class="d-flex flex-column flex-md-row">
         <!-- Link for testing: -->
-        <img src="../../public/images/logoMed.png">
+            <img src="../../public/images/logoTrimMed.png" class="img-fluid m-md-4 h-100">
         <!-- Link for final handlebars version -->
         <!-- <img src="images/logoMed.png" -->
-        <div class="d-flex justify-content-center align-items-center flex-column w-100">
-            <h1 class="text-center">NERD KNOWLEDGE QUEST</h1>
-            <h2 class="text-center">The place to prove your nerd know-how</h2>
+        <div class="d-flex justify-content-center align-items-center flex-column p-3 w-100">
+            <h1 class="text-center display-3 display-md-2 ">NERD KNOWLEDGE QUEST</h1>
+            <h2 class="text-center fs-3 fs-md-2">The place to prove your nerd know-how</h2>
         </div>
     </header>
     <main>
         <div class="container-fluid">
             <div class="row flex-nowrap">
                 <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light">
-                    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white p-h-100">
                         <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-black text-decoration-none">
                             <span class="fs-5 d-none d-sm-inline">Menu</span>
                         </a>
@@ -58,16 +54,32 @@
                     </div>
                 </div>
                 <div class="col py-3">
-                    <form>
-                        <!-- bootstrap for ul -->
-                       
-                            <input type="radio" value="{{answers.a}}" name="questionAnswers" id="AnswerOne">{{answers.a}}</input>
-                            <input type="radio" value="{{answers.b}}" name="questionAnswers" id="AnswerTwo">{{answers.b}}</input>
-                            <input type="radio" value="{{answers.c}}" name="questionAnswers" id="AnswerThree">{{answers.c}}</input>
-                            <input type="radio" value="{{answers.d}}" name="questionAnswers" id="AnswerFour">{{answers.d}}</input>
-                            <p id="correctAnswer" class="d-none">{{correct}}</p>
-                        
-                    </form>
+                <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+                <!-- The following code is the body for this page: -->
+
+                <h3 class="display-4 text-center color-blue-crayola m-3 p-3">Quiz Title</h3>
+                <h4 class="m-3 p-3">Question: {{question}}</h4>     
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="{{answers.a}}" name="questionAnswers" id="AnswerOne{{number}}">
+                    <label class="form-check-label">{{answers.a}}</label> 
+                    <br>
+                    <input class="form-check-input" type="radio" value="{{answers.b}}" name="questionAnswers" id="AnswerTwo{{number}}">
+                    <label class="form-check-label">{{answers.b}}</label> 
+                    <br>
+                    <input class="form-check-input" type="radio" value="{{answers.c}}" name="questionAnswers" id="AnswerThree{{number}}">
+                    <label class="form-check-label">{{answers.c}}</label> 
+                    <br>
+                    <input class="form-check-input" type="radio" value="{{answers.d}}" name="questionAnswers" id="AnswerFour{{number}}">
+                    <label class="form-check-label">{{answers.d}}</label> 
+                    <br>
+                    
+                    <p id="correctAnswer{{number}}" name="correctAnswer" class="d-none">{{correct}}</p>
+                </div>
+                <button type="button" class="btn btn-primary m-4 btn-color-forest btn-lg text-center" id="submitBTN">Submit</button>
+
+                <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@
     <!-- <link href="css/style.css" rel="stylesheet"/> -->
 </head>
 <body>
-    <header class="d-flex flex-column flex-md-row">
+    <header class="d-flex flex-column flex-md-row bg-dark">
         <!-- Link for testing: -->
             <img src="../../public/images/logoTrimMed.png" class="img-fluid m-md-4 h-100">
         <!-- Link for final handlebars version -->
@@ -56,47 +56,72 @@
                 <div class="col py-3">
                     <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
                     <!-- The following code is the body for this page: -->
-                    <section class="vh-100 gradient-custom">
-                      <div class="container py-5 h-100">
-                        <div class="row d-flex justify-content-center align-items-center h-100">
-                          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                            <div class="card bg-dark bg-blue-crayola text-black" style="border-radius: 1rem;">
-                              <div class="card-body p-5 text-center">
-                                <div class=" mb-md-5 mt-md-4 pb-5">
-                                  <h2 class="fw-bold mb-2 text-uppercase">SIGN UP</h2>
-                                  <p class="text-black mb-5">Please choose your username and password</p>
-                                  <form class="form login-form">
-                                    <div class="form-group form-outline form-white mb-4">
-                                        <input type="text" id="username-login" class="form-control" />
-                                        <label class="form-label" for="username-login">Username</label>
-                                    </div>
-                                    <div class="form-group form-outline form-white mb-4">
-                                      <input type="text" id="email" class="form-control" />
-                                      <label class="form-label" for="username-login">Email</label>
-                                  </div>
-                                    <div class="form-group form-outline form-white mb-4">
-                                      <input type="password" id="password-login" class="form-control form-control-lg" />
-                                      <label class="form-label" for="password-login">Password</label>
-                                    </div>
-                                    <!-- !!!!!!!Needs logic for checking password or delete this section!!!!! -->
-                                    <div class="form-group form-outline form-white mb-4">
-                                      <input type="password" id="password-login-check" class="form-control form-control-lg" />
-                                      <label class="form-label" for="password-login">Retype Password</label>
-                                    </div>
-                                    <!-- ^^^ -->
-                                    <div class="form-group">
-                                    <button id="signupSubmit" class="btn btn-outline-light btn-lg px-5" type="submit">Submit</button>
-                                    </div>
-                                  </form>
-                                </div>
-                                <a class="btn btn-dark" href="/login">Login</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </section>
+
+                    <div class="bg-dark m-5 p-5">
+                        <h3 class="display-3 color-forest text-center">FINAL SCORE</h3>
+                        <h1 class="display-2 color-maize text-center">98</h1>
+                    </div>
+
+                    <h4 class="text-center m-4">Quiz High Scores</h4>
+                    <div>
+                        <table class="table bg-blue-crayola">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Score</th>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Nerd Level</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <!-- The following image should change based on user's Power Level-->
+                                        <!-- images are in the images folder -->
+                                        <!-- The avatars go in this order: bronze, silver, gold, jewel -->
+                                        <img src="../../public/images/jewelCrown1.png" class="w-25">
+                                    </td>
+                                    <td>97</td>
+                                    <td>NerdyGirl72</td>
+                                    <td>2572</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="../../public/images/goldCrown1.png" class="w-25">
+                                    </td>
+                                    <td>100</td>
+                                    <td>LukeSkywalker</td>
+                                    <td>2572</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="../../public/images/silverCrown1.png" class="w-25">
+                                    </td>
+                                    <td>82</td>
+                                    <td>BilboBaggins</td>
+                                    <td>931</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="../../public/images/bronzeCrown1.png" class="w-25">
+                                    </td>
+                                    <td>65</td>
+                                    <td>Batman</td>
+                                    <td>489</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="../../public/images/bronzeCrown1.png" class="w-25">
+                                    </td>
+                                    <td>61</td>
+                                    <td>EllenRipley</td>
+                                    <td>163</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
                 </div>
             </div>
         </div>
