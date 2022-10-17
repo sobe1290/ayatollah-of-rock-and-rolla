@@ -24,6 +24,7 @@ const response = await fetch('/api/users/login', {
 if (response.ok) {
     //document.location.replace('/categories')
     console.log('log in good');
+    document.location.replace('/account');
 } else {
     alert('failed to login')
 }
