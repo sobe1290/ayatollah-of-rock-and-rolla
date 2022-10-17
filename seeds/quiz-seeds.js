@@ -3,6 +3,7 @@ const Quiz = require('../models/Quiz')
 const quizData = [
     {
         title: 'Mad Max: Beyond Thunderdome',
+        description: 'A quiz about the 1985 classic: "Mad Max: Boyond Thunderdome". Two men enter! One man leaves!',
         questions: [
             {
                 number: 1,
@@ -31,6 +32,7 @@ const quizData = [
     },
     {
         title: 'Star Wars : Rogue One',
+        description: 'Rogue One, a Star Wars story.',
         questions: [
             {
                 number: 1,
@@ -59,6 +61,7 @@ const quizData = [
     },
     {
         title: 'Star Wars Worlds',
+        description: 'How well do you know the planets of the Star Wars Universe?',
         questions: [
             {
                 number: 1,
@@ -87,6 +90,7 @@ const quizData = [
     },
     {
         title: 'World of Warcraft',
+        description: 'Generic description',
         questions: [
             {
                 number: 1,
@@ -203,6 +207,7 @@ const quizData = [
     },
     {
         title: 'Legend of Zelda',
+        description: 'Do you have what it takes to earn the triforce of wisdom?',
         questions: [
             {
                 number: 1,
@@ -319,6 +324,7 @@ const quizData = [
     },
     {
         title: 'Lord of the Rings',
+        description: 'One quiz to rule them all.',
         questions: [
             {
                 number: 1,
@@ -347,6 +353,7 @@ const quizData = [
     },
     {
         title: 'Dune',
+        description: 'Generic description',
         questions: [
             {
                 number: 1,
@@ -375,6 +382,7 @@ const quizData = [
     },
     {
         title: 'Batman',
+        description: "I'm Batman",
         questions: [
             {
                 number: 1,
@@ -403,6 +411,7 @@ const quizData = [
     },
     {
         title: 'Superman',
+        description: 'Generic description',
         questions: [
             {
                 number: 1,

@@ -88,6 +88,7 @@ router.get('/categories/:id', auth, async (req, res) => {
         },
         attributes: [
           'title',
+          'description',
           'id'
         ],
         include: [{ model: Category,
