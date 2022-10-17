@@ -87,7 +87,7 @@ router.get('/categories/:id', auth, async (req, res) => {
         res.json(err);
       });
   
-   res.render('quizzes', auth, { quizData });
+   res.render('quizzes', { quizData });
 
     }
       catch (err) {
@@ -161,7 +161,7 @@ router.get('/login', (req, res) => {
 });
 
 //This is the route to call to logout
-router.post('/logout', (req, res) => {
+router.get('/logout', (req, res) => {
   try{ 
     res.status(200).render('landing');
 } catch (err) {
