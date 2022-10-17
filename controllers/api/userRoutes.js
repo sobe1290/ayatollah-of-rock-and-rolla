@@ -119,9 +119,9 @@ router.put('/update', async (req, res) => {
 });
 
 //This is the route to call to logout
-router.post('/logout', (req, res) => {
+router.post('/logout', async (req, res) => {
   if (req.session.loggedIn) {
-      req.session.destroy(() => {
+      await req.session.destroy(() => {
         res.status(204).end();
       });
   } else {
