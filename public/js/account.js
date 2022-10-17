@@ -1,6 +1,7 @@
 // Receive username, email, power level
 const User = require('../../models/User');
  
+const userPowerlevel = document.getElementById('powerLevel').getAttribute('data-powerlevel');
 
 //grabing the sign in variables from user
 const userName = await User.findOne({ 
