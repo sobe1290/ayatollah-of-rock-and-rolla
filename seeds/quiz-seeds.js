@@ -224,8 +224,96 @@ const quizData = [
                         c: 'Malon',
                         d: 'Epona'
                     },
-                correct: 'Warrior'
-            }
+                correct: 'Epona'
+            },
+            {
+                number: 3,
+                question: "What is the name of Link's sword?",
+                answers: {
+                        a: 'White Sword',
+                        b: 'Great Fairy Sword',
+                        c: 'Kokiri Sword',
+                        d: 'Master Sword'
+                    },
+                correct: 'Master Sword'
+            },
+            {
+                number: 4,
+                question: 'Who are the beings that inhabit Death Mountain?',
+                answers: {
+                        a: 'The Gorons',
+                        b: 'The Zora',
+                        c: 'The Gerudo',
+                        d: 'The Kokiri'
+                    },
+                correct: 'The Gorons'
+            },
+            {
+                number: 5,
+                question: 'In what year was the first Zelda game released?',
+                answers: {
+                        a: '1984',
+                        b: '1992',
+                        c: '1990',
+                        d: '1986'
+                    },
+                correct: '1986'
+            },
+            {
+                number: 6,
+                question: 'In which Zelda game did Dark Link make his first appearance?',
+                answers: {
+                        a: 'A Link to the Past',
+                        b: 'Twilight Princess',
+                        c: 'Ocarina of Time',
+                        d: 'Adventure of Link'
+                    },
+                correct: 'Adventure of Link'
+            },
+            {
+                number: 7,
+                question: 'Which of these is not a part of the Triforce?',
+                answers: {
+                        a: 'Triforce of Strength',
+                        b: 'Triforce of Power',
+                        c: 'Triforce of Courage',
+                        d: 'Triforce of Wisdom'
+                    },
+                correct: 'Triforce of Strength'
+            },
+            {
+                number: 8,
+                question: 'What is the true identity of Sheik?',
+                answers: {
+                        a: 'Link',
+                        b: 'Zelda',
+                        c: 'Ganon',
+                        d: 'Street Merchant'
+                    },
+                correct: 'Zelda'
+            },
+            {
+                number: 9,
+                question: 'What is the name of the Boss in the water temple in Ocarina of Time?',
+                answers: {
+                        a: 'Bongo Bongo',
+                        b: 'Queen Gohma',
+                        c: 'Morpha',
+                        d: 'Volvagia'
+                    },
+                correct: 'Morpha'
+            },
+            {
+                number: 10,
+                question: 'What is the top selling Zelda game of all time?',
+                answers: {
+                        a: 'Ocarina of Time',
+                        b: 'A Link to the Past',
+                        c: 'Windwaker',
+                        d: 'Breath of the Wild'
+                    },
+                correct: 'Breath of the Wild'
+            },
         ],
         category_id: 2
     },
