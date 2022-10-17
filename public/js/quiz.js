@@ -1,10 +1,10 @@
 const submitBTN = document.getElementById('submitBTN');
-const express =require('express');
+
 
 //grabing variables for userid, quizid 
 const quizid = document.getElementById('quiz-id').getAttribute('data-quiz');
 
-const app = express();
+
 
 
 const checkAnswer = () => {
