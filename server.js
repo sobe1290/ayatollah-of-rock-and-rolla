@@ -11,13 +11,14 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 require('dotenv').config();
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
+const helpers = require('./utils/helpers')
 
 //starting express
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 //handlebars
-const handlebars = expressHandlebars.create({});
+const handlebars = expressHandlebars.create({ helpers });
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 

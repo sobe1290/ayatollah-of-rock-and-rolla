@@ -3,7 +3,6 @@
 
 const signUpFormHandler = async (event) => {
     event.preventDefault();
-    console.log("hello");
     const usernameElement = document.querySelector("#username-login").value.trim();
     const passwordElement = document.querySelector("#password-login").value.trim();
     const checkpasswordElement = document.querySelector("#password-login-check").value.trim();
@@ -23,8 +22,7 @@ const signUpFormHandler = async (event) => {
       });
   
       if (response.ok) {
-          // then route page to categories
-        document.location.replace('/');
+        document.location.replace('/account');
       } else {
         alert('Failed to sign up.');
       }

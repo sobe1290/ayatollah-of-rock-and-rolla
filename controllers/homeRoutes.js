@@ -16,7 +16,18 @@ router.get('/', async (req, res) => {
 
 router.get('/account',auth, async (req, res) => {
   try {
-    const activeUser = await User.findByPk(req.session.user_id);
+    const activeUser = await User.findByPk(req.session.user_id, {
+      include: [{ model: Score,
+        order: [ ['createdAt', 'DESC'] ],
+        include: { model: Quiz,
+          attributes: [
+            'title'
+          ],
+          include: { model: Category }
+        }
+      }],
+      limit: 5
+    });
     res.status(200).render('account', { activeUser }
     )
   }
