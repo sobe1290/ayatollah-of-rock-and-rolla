@@ -168,69 +168,69 @@ const quizData = [
             },
             {
                 number: 5,
-                question: "?",
+                question: "Which villain wields the two sided light-saber?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Darth Vader',
+                        b: 'Ajunta Pall',
+                        c: 'Darth Bane',
+                        d: 'Darth Maul'
                     },
-                correct: ''
+                correct: 'Darth Maul'
             },
             {
                 number: 6,
-                question: "?",
+                question: "What is Boba Fett?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Rogue Bounty Hunter',
+                        b: 'Stormtrooper',
+                        c: 'Rebel Pilot',
+                        d: 'Wookie'
                     },
-                correct: ''
+                correct: 'Rogue Bounty Hunter'
             },
             {
                 number: 7,
-                question: "?",
+                question: "Who trained Obi-Wan?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Mace Windu',
+                        b: 'Luke Skywalker',
+                        c: 'Qui-Gon Jinn',
+                        d: 'He trained himself'
                     },
-                correct: ''
+                correct: 'Qui-Gon Jinn'
             },
             {
                 number: 8,
-                question: "?",
+                question: "What planet are Wookiees from?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Kashyyyk',
+                        b: 'Dantooine',
+                        c: 'Dagobah',
+                        d: 'Naboo'
                     },
-                correct: ''
+                correct: 'Kashyyyk'
             },
             {
                 number: 9,
-                question: "?",
+                question: "What do fans speculate Jar Jar Bink is?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'God',
+                        b: 'Bounty Hunter',
+                        c: 'Jedi',
+                        d: 'Sith Lord'
                     },
-                correct: ''
+                correct: 'Sith Lord'
             },
             {
                 number: 10,
-                question: "?",
+                question: "What is Kylo Ren's real name?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Zorii Bliss',
+                        b: 'Ben Solo',
+                        c: 'Bren Derlin',
+                        d: 'Maz Kanata'
                     },
-                correct: ''
+                correct: 'Ben Solo'
             },
             
         ],
