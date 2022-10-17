@@ -2,6 +2,8 @@
 {{!-- STILL NEEDS STYLING --}}
 
 <h1 id="quiz-id" data-quiz="{{quizData.dataValues.id}}">{{quizData.dataValues.title}}</h1>
+<p id="user-id" data-usersession="{{user_id}}" class="d-none">{{user_id}}</p>
+<p id="powerLevel" data-powerlevel="{{powerLevel}}" class="d-none">{{powerLevel}}</p>
 {{#each quizData.dataValues.questions as | questions |}}
 <h2>Question: {{question}}</h2>
 

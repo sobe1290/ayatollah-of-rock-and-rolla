@@ -106,7 +106,10 @@ router.get('/quiz/:id', async (req, res) => {
     });
     
     res.status(200).render('quiz', {
-      quizData
+      quizData, 
+      user_id: req.session.user_id,
+      powerLevel: req.session.powerLevel,
+       
     })
     
 

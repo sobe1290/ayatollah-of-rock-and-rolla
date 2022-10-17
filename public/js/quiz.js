@@ -3,12 +3,17 @@ const submitBTN = document.getElementById('submitBTN');
 
 //grabing variables for userid, quizid 
 const quizid = document.getElementById('quiz-id').getAttribute('data-quiz');
+const userPowerlevel = document.getElementById('powerLevel').getAttribute('data-powerlevel');
+const usersession_id = document.getElementById('user-id').getAttribute('data-usersession');
 
 
 
 
 const checkAnswer = () => {
 
+  console.log(userPowerlevel);
+  //console.log(usersession_id);
+  console.log(quizid);
   const selectedAnswerArray = []
   const correctAnswerArray = []
     
@@ -43,29 +48,43 @@ const checkAnswer = () => {
 
     //TODO: Take the score variable value and shoot it to the server, along wth the user ID, and Quiz number 
     let updateScore = { 
-      // score: req.session.powerLevel,
-      // user_id: req.session.user_id,
+      score: score,
+      user_id: usersession_id,
       quiz_id: quizid,
      }
+     let newPowerlevel = userPowerlevel +score;
 
+     //POST request for score
     const response = await fetch('/api/score', {
-      //POST request for score
       method: 'POST',
       body: JSON.stringify(updateScore),
       headers: { 'Content-Type': 'application/json' }, 
       })
       if (response.ok) {
-        console.log('post request successful')
-        console.log(req.session.user_id);
-        console.log(quizid);
-        console.log(req.session.powerLevel);
+        console.log('post request for score successful')
+        
       }else {
         alert('updating score has failed')
-
+      }
+      // put request for user
+      const putResponse = await fetch('api/users/update', {
+        method: 'PUT',
+        body: JSON.stringify({
+          power_level: newPowerlevel,
+        }),
+      headers: { 'Content-Type': 'application/json' }, 
+      })
+      if (putResponse.ok) {
+        console.log('put request for USERS successful')
+        
+      }else {
+        alert('updating score has failed')
       }
 
+      
 
-    // PUT request for user
+     
+    // Post request for userquiz
   }, "1000")
 }
 //on submit, grab total score, add it to Main.handlebars powerlevel and PUT it to User.power_level userRoutes.js
