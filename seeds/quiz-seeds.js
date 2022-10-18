@@ -589,7 +589,7 @@ const quizData = [
     },
     {
         title: 'Dune',
-        description: 'Generic description',
+        description: 'I must not fear. Fear is the mind-killer.',
         questions: [
             {
                 number: 1,
@@ -615,91 +615,91 @@ const quizData = [
             },
             {
                 number: 3,
-                question: '',
+                question: 'Where are the Harkonnen from?',
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Geidi Prime',
+                        b: 'Ginaz',
+                        c: 'Grumman',
+                        d: 'Kaitain'
                     },
-                correct: ''
+                correct: 'Geidi Prime'
             },
             {
                 number: 4,
-                question: "",
+                question: "What is a crysknife made from?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Pure Chaos',
+                        b: 'Energy Crystals',
+                        c: 'Spice Melange',
+                        d: 'Tooth of a dead sandworm'
                     },
-                correct: ''
+                correct: 'Tooth of a dead sandworm'
             },
             {
                 number: 5,
-                question: "?",
+                question: "How do you defeat the defensive shields of Dune?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Go Slow',
+                        b: 'Use Fire',
+                        c: 'Use Magic',
+                        d: 'Hulk Smash It'
                     },
-                correct: ''
+                correct: 'Go Slow'
             },
             {
                 number: 6,
-                question: "?",
+                question: "What was Jessica to Duke Leto Atreides",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Wife',
+                        b: 'Concubine',
+                        c: 'Servant',
+                        d: 'Sister'
                     },
-                correct: ''
+                correct: 'Concubine'
             },
             {
                 number: 7,
-                question: "?",
+                question: "What role rules house Harkonnen?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'King',
+                        b: 'President',
+                        c: 'Ayotollah',
+                        d: 'Baron'
                     },
-                correct: ''
+                correct: 'Baron'
             },
             {
                 number: 8,
-                question: "?",
+                question: "Who trained Paul Atreides?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Gurney Halleck',
+                        b: 'Thufir Hawat',
+                        c: 'Feyd-Rautha Harkonnen',
+                        d: 'Duncan Idaho'
                     },
-                correct: ''
+                correct: 'Gurney Halleck'
             },
             {
                 number: 9,
-                question: "?",
+                question: "Whose Fremen name is  Muad'Dib?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Duke Leto',
+                        b: 'Jessica',
+                        c: 'Paul Atreides',
+                        d: 'Vladimir Harkonnen'
                     },
-                correct: ''
+                correct: 'Paul Atreides'
             },
             {
                 number: 10,
-                question: "?",
+                question: "What do the sandworms respond to?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Smell',
+                        b: 'Sound',
+                        c: 'Fear',
+                        d: 'Heat'
                     },
-                correct: ''
+                correct: 'Sound'
             },
         ],
         category_id: 3
