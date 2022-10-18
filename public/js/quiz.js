@@ -2,18 +2,18 @@ const submitBTN = document.getElementById('submitBTN');
 
 
 //grabing variables for userid, quizid 
-const quizid = document.getElementById('quiz-id').getAttribute('data-quiz');
+const quiz_id = document.getElementById('quiz-id').getAttribute('data-quiz');
 const userPowerlevel = document.getElementById('powerLevel').getAttribute('data-powerlevel');
-const usersession_id = document.getElementById('user-id').getAttribute('data-usersession');
+const user_id = document.getElementById('user-id').getAttribute('data-usersession');
 
 
 
 
-const checkAnswer = () => {
+const checkAnswer = async () => {
 
   console.log(`powerlevel: ${userPowerlevel}`);
   //console.log(usersession_id);
-  console.log(`quizID#: ${quizid}`);
+  // console.log(`quizID#: ${quizid}`);
   const selectedAnswerArray = []
   const correctAnswerArray = []
     
@@ -35,7 +35,7 @@ const checkAnswer = () => {
     })
 
     //This part compares the two arrays and makes a new array with only the correct answers 
-  setTimeout(async () => {
+ 
     const matchingAnswers = selectedAnswerArray.filter(function (obj) {
       return correctAnswerArray.indexOf(obj) !== -1;
       
@@ -49,11 +49,16 @@ const checkAnswer = () => {
     //TODO: Take the score variable value and shoot it to the server, along wth the user ID, and Quiz number 
     let updateScore = { 
       score: score,
-      user_id: usersession_id,
-      quiz_id: quizid,
+      user_id: user_id,
+      quiz_id: quiz_id,
      }
-     let newPowerlevel = userPowerlevel +score;
+     let newPowerlevel = Number(userPowerlevel +score);
+     console.log(newPowerlevel)
 
+     let updatePowerLevel = {
+      power_level: newPowerlevel,
+      user_id: user_id,
+    }
      //POST request for score
     const response = await fetch('/api/score', {
       method: 'POST',
@@ -66,12 +71,10 @@ const checkAnswer = () => {
         alert('updating score has failed')
       }
       // put request for user
-      const putResponse = await fetch('api/users/update', {
+      const putResponse = await fetch('../api/users/update', {
         method: 'PUT',
-        body: JSON.stringify({
-          power_level: newPowerlevel,
-        }),
-      headers: { 'Content-Type': 'application/json' }, 
+        body: JSON.stringify(updatePowerLevel),
+        headers: { 'Content-Type': 'application/json' }, 
       })
       if (putResponse.ok) {
         console.log('put request for USERS successful')
@@ -80,16 +83,17 @@ const checkAnswer = () => {
         alert('updating POwerlevel has failed')
       }
 
-      const postuserquiz =await fetch('api/userquiz',{
+      const postuserquiz =await fetch('../api/userquiz',{
         method: 'POST',
         body: JSON.stringify ({
-          user_id: usersession_id,
-          quiz_id: quizid,
+          user_id: user_id,
+          quiz_id: quiz_id,
         }),
         headers: { 'Content-Type': 'application/json' }, 
       })
       if (postuserquiz.ok) {
         console.log('POST request for Userquiz successful')
+        document.location.replace(`/quiz/${quiz_id}/leaderboard`)
         
       }else {
         alert('updating userquiz has failed')
@@ -97,7 +101,7 @@ const checkAnswer = () => {
 
      
    
-  }, "1000")
+  
 }
 
 // when hit submitBTN check answer starts

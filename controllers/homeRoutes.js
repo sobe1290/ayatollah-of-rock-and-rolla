@@ -16,7 +16,18 @@ router.get('/', async (req, res) => {
 
 router.get('/account',auth, async (req, res) => {
   try {
-    const activeUser = await User.findByPk(req.session.user_id);
+    const activeUser = await User.findByPk(req.session.user_id, {
+      include: [{ model: Score,
+        order: [ ['createdAt', 'DESC'] ],
+        include: { model: Quiz,
+          attributes: [
+            'title'
+          ],
+          include: { model: Category }
+        }
+      }],
+      limit: 5
+    });
     res.status(200).render('account', { activeUser }
     )
   }
@@ -36,9 +47,6 @@ router.get('/signup', async (req, res) => {
 router.get('/categories', auth, async (req, res) => {
     try {
       const categoryData = await Category.findAll({
-        // include: [{ model: Quiz,
-        //   attributes: ['title']
-        // }],
       }).catch((err) => {
         res.json(err);
       });
@@ -77,6 +85,7 @@ router.get('/categories/:id', auth, async (req, res) => {
         },
         attributes: [
           'title',
+          'description',
           'id'
         ],
         include: [{ model: Category,
@@ -87,7 +96,7 @@ router.get('/categories/:id', auth, async (req, res) => {
         res.json(err);
       });
   
-   res.render('quizzes', auth, { quizData });
+   res.render('quizzes', { quizData });
 
     }
       catch (err) {
@@ -124,8 +133,21 @@ router.get('/quiz/:id', auth, async (req, res) => {
     }
 });
 
+router.get('/create', auth, async (req, res) => {
+  try {
+    const categoryData = await Category.findAll({
+    }).catch((err) => {
+      res.json(err);
+    });
+    res.status(200).render('quizCreate', { categoryData })
+  }
+    catch (err) {
+      res.status(500).json(err);
+    }
+});
+
 // Get high scores for chosen quiz
-router.get('/quiz/:id/leaderboard/', auth, async (req, res) => {
+router.get('/quiz/:id/leaderboard', auth, async (req, res) => {
   try {
 
     const scoreData = await Score.findAll({
@@ -143,7 +165,7 @@ router.get('/quiz/:id/leaderboard/', auth, async (req, res) => {
       res.json(err);
     });
 
- res.render('leaderboard', { scoreData })
+ res.render('scoreScreen', { scoreData })
 
   }
     catch (err) {
@@ -161,12 +183,13 @@ router.get('/login', (req, res) => {
 });
 
 //This is the route to call to logout
-router.post('/logout', (req, res) => {
+router.get('/logout', (req, res) => {
   try{ 
     res.status(200).render('landing');
 } catch (err) {
     res.status(500).json(err);
 };
 });
+
 
 module.exports = router;

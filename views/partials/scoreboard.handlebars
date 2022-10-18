@@ -1,0 +1,6 @@
+{{#each scoreData}}
+    {{log dataValues}}
+    <p>Score: {{dataValues.score}}</p>
+    <p>User: {{dataValues.user.dataValues.user_name}}</p>
+    <p>powerlevel: {{dataValues.user.dataValues.power_level}}</p>
+{{/each}}

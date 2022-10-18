@@ -78,17 +78,10 @@ router.post('/', async (req, res) => {
   try {
     const quizData = await Quiz.create({
       title: req.body.title,
-      questions: req.body.questions, /* Formatting since they are objects containing objects? 
-      BUILD QUESTIONS AS OBJECTS WITH ANSWERS AS NESTED OBJECTS -- NEST THE QUESTION OBJECT 
-      INTO A QUIZ OBJECT WITH A TITLE KEY:VALUE PAIR*/
+      questions: req.body.questions,
       category_id: req.body.category_id,
+      description: req.body.description,
     });
-
-    // req.session.save(() => {
-    //   req.session.loggedIn = true;
-
-    //   res.status(200).json(quizData);
-    // });
 
     res.status(200).json(quizData);
 

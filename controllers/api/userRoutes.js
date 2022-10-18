@@ -26,12 +26,14 @@ router.get('/:id', async (req, res) => {
   try {
       const userData = await User.findByPk(req.params.id, {
         include: [{ model: Score,
-          where: {user_id: req.params.id},
+          order: [ ['createdAt', 'DESC'] ],
           include: { model: Quiz,
             attributes: [
               'title'
-            ]} 
-        }]
+            ],
+            include: { model: Category }
+          }
+        }],
       })
       res.json(userData)
   } catch(err) {console.log(err)}
@@ -46,9 +48,12 @@ router.post('/createuser', async (req, res) => {
       email: req.body.emailElement,
     });
 
-     req.session.save(() => {
-     req.session.loggedIn = true;
-     res.status(200).json(dbUserData);
+    req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.user_name;
+      req.session.powerLevel = dbUserData.power_level;
+      req.session.loggedIn = true;
+      res.status(200).json(dbUserData);
     });
     } catch (err) {
     console.log(err);
@@ -81,9 +86,6 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect username or password, please try again' });
       return;
     }
-    // console.log(userData.id, userData.user_name, userData.power_level)
-
-    // res.status(200).json({message: 'you have to construct more pylons'})
 
     req.session.save(() => {
       req.session.user_id = userData.id;
@@ -98,9 +100,10 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.put('/update', (req, res) => {
+// PUT route for updating power_level
+router.put('/update', async (req, res) => {
   try {
-    const updatedUser = User.update({
+    const updatedUser = await User.update({
       power_level: req.body.power_level,
     },
     {
@@ -113,12 +116,12 @@ router.put('/update', (req, res) => {
     }
     res.status(200).json(updatedUser)
   } catch(err) {res.status(500).json(err)}
-})
+});
 
 //This is the route to call to logout
-router.post('/logout', (req, res) => {
-  if (req.session.logged_in) {
-      req.session.destroy(() => {
+router.post('/logout', async (req, res) => {
+  if (req.session.loggedIn) {
+      await req.session.destroy(() => {
         res.status(204).end();
       });
   } else {

@@ -16,6 +16,10 @@ Quiz.init (
             type: DataTypes.STRING,
             allowNull: false
         },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         questions: {
             type: DataTypes.JSON,
             allowNull: false,
