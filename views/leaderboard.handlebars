@@ -1,8 +1,8 @@
 <h3 class="display-3 text-center m-5">LEADERBOARD</h3>
 <!-- Replace table info with variables -->
-{{#each topUsers as | user |}}
+{{!-- {{#each topUsers as | user |}}
     {{> topUsers}}
-{{/each}}
+{{/each}} --}}
 
 <div>
     <table class="table bg-forest">
@@ -11,53 +11,13 @@
                 <th scope="col"></th>
                 <th scope="col">Nerd Level</th>
                 <th scope="col">Username</th>
-                <th scope="col">Quizzes taken</th>
+                {{!-- <th scope="col">Quizzes taken</th> --}}
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    <!-- The following image should change based on user's Power Level-->
-                    <!-- images are in the images folder -->
-                    <!-- The avatars go in this order: bronze, silver, gold, jewel -->
-                    <img src="../../public/images/jewelCrown1.png" class="w-25">
-                </td>
-                <td>2572</td>
-                <td>NerdyGirl72</td>
-                <td>97</td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="../../public/images/goldCrown1.png" class="w-25">
-                </td>
-                <td>1642</td>
-                <td>LukeSkywalker</td>
-                <td>82</td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="../../public/images/silverCrown1.png" class="w-25">
-                </td>
-                <td>931</td>
-                <td>BilboBaggins</td>
-                <td>45</td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="../../public/images/bronzeCrown1.png" class="w-25">
-                </td>
-                <td>489</td>
-                <td>Batman</td>
-                <td>22</td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="../../public/images/bronzeCrown1.png" class="w-25">
-                </td>
-                <td>165</td>
-                <td>EllenRipley</td>
-                <td>3</td>
-            </tr>
+            {{#each topUsers as | user |}}
+                {{> topUsers}}
+            {{/each}}
         </tbody>
     </table>
 </div>
