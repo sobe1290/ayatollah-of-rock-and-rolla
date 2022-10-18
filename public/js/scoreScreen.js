@@ -1,4 +1,3 @@
-
 const ctx = document.getElementById('myChart');
 const userScore = document.getElementById('userScore').getAttribute('data-obj');
 const activeUser = document.getElementById('final').getAttribute('data-user');
@@ -19,28 +18,31 @@ const myChart = new Chart(ctx, {
     data: {
         labels: users,
         datasets: [{
-            label: 'Scores',
+            label: 'Score',
             data: scores,
             backgroundColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                '#F5CB5C',
+                '#3F88C5',
+                '#3F88C5',
+                '#3F88C5',
+                '#3F88C5',
+                '#3F88C5',
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                '#F5CB5C',
+                '#3F88C5',
+                '#3F88C5',
+                '#3F88C5',
+                '#3F88C5',
+                '#3F88C5',
             ],
             borderWidth: 1
         }]
     },
     options: {
+        legend: {
+            display: false
+        },
         scales: {
             yAxes: [{
                 ticks: {

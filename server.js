@@ -12,6 +12,7 @@ require('dotenv').config();
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const helpers = require('./utils/helpers');
+const sessionsecret = process.env.SESSION_SECRET
 
 
 //starting express
