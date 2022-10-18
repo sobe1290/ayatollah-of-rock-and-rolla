@@ -2,18 +2,18 @@ const submitBTN = document.getElementById('submitBTN');
 
 
 //grabing variables for userid, quizid 
-const quizid = document.getElementById('quiz-id').getAttribute('data-quiz');
+const quiz_id = document.getElementById('quiz-id').getAttribute('data-quiz');
 const userPowerlevel = document.getElementById('powerLevel').getAttribute('data-powerlevel');
-const usersession_id = document.getElementById('user-id').getAttribute('data-usersession');
+const user_id = document.getElementById('user-id').getAttribute('data-usersession');
 
 
 
 
-const checkAnswer = () => {
+const checkAnswer = async () => {
 
   console.log(`powerlevel: ${userPowerlevel}`);
   //console.log(usersession_id);
-  console.log(`quizID#: ${quizid}`);
+  // console.log(`quizID#: ${quizid}`);
   const selectedAnswerArray = []
   const correctAnswerArray = []
     
@@ -35,7 +35,7 @@ const checkAnswer = () => {
     })
 
     //This part compares the two arrays and makes a new array with only the correct answers 
-  setTimeout(async () => {
+ 
     const matchingAnswers = selectedAnswerArray.filter(function (obj) {
       return correctAnswerArray.indexOf(obj) !== -1;
       
@@ -49,10 +49,11 @@ const checkAnswer = () => {
     //TODO: Take the score variable value and shoot it to the server, along wth the user ID, and Quiz number 
     let updateScore = { 
       score: score,
-      user_id: usersession_id,
-      quiz_id: quizid,
+      user_id: user_id,
+      quiz_id: quiz_id,
      }
      let newPowerlevel = userPowerlevel +score;
+     console.log(`newPowerLevel ${newPowerlevel}`)
 
      //POST request for score
     const response = await fetch('/api/score', {
@@ -69,7 +70,7 @@ const checkAnswer = () => {
       const putResponse = await fetch('api/users/update', {
         method: 'PUT',
         body: JSON.stringify({
-          power_level: newPowerlevel,
+          power_level: Number(newPowerlevel)
         }),
       headers: { 'Content-Type': 'application/json' }, 
       })
@@ -83,8 +84,8 @@ const checkAnswer = () => {
       const postuserquiz =await fetch('api/userquiz',{
         method: 'POST',
         body: JSON.stringify ({
-          user_id: usersession_id,
-          quiz_id: quizid,
+          user_id: user_id,
+          quiz_id: quiz_id,
         }),
         headers: { 'Content-Type': 'application/json' }, 
       })
@@ -97,7 +98,7 @@ const checkAnswer = () => {
 
      
    
-  }, "1000")
+  
 }
 
 // when hit submitBTN check answer starts
