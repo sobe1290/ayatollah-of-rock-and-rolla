@@ -28,7 +28,8 @@ app.set('view engine', 'handlebars');
 const sess = {
   secret: 'powertrip',
   cookie: {
-      // maxAge: 5 * 60 * 1000
+      maxAge: 20 * 60 * 1000,
+      resave: true
   },
   resave: true,
   saveUninitialized: true,
