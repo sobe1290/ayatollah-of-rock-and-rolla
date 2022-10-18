@@ -823,7 +823,7 @@ const quizData = [
     },
     {
         title: 'Superman',
-        description: 'Generic description',
+        description: 'Dreams lift us up and transform is into something better.',
         questions: [
             {
                 number: 1,
