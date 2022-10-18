@@ -147,7 +147,7 @@ router.get('/create', auth, async (req, res) => {
 });
 
 // Get high scores for chosen quiz
-router.get('/quiz/:id/leaderboard/', auth, async (req, res) => {
+router.get('/quiz/:id/leaderboard', auth, async (req, res) => {
   try {
 
     const scoreData = await Score.findAll({
