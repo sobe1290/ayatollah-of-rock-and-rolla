@@ -8,4 +8,7 @@ module.exports = {
         const Day = date.getDate()
         return `${Month}/${Day}/${Year}`
     },
+    inc: (index) => {
+      return index+1;
+    }
 };
