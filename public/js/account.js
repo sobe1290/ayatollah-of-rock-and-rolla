@@ -25,7 +25,7 @@ switch (true) {
 const myChart = new Chart(ctx, {
     type: 'horizontalBar',
     data: {
-        labels: ['Power Level'],
+        labels: ['Nerd Level'],
         datasets: [{
             data: [power],
             backgroundColor: [
