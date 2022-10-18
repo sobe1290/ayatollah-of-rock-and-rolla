@@ -1,25 +1,37 @@
-// fetch GET all scores for that quiz, and current score by 
+import { Chart } from "chart.js";
+import Chart from 'chart.js'
+const ctx = document.getElementById('myChart');
 
-
-// function to grab all the scores from quizzes
-const scoreQuizzesHandler = async (event) => {
-    event.preventDefault();
-    
-
-
-    const response = await fetch('/api/scoreRoutes', {
-        method: 'GET',
-    });
-        //TO DO: how do we grab the scores just for the selected quiz?
-        // query score table via
-    try {
-        if (response.ok) {
-            //TO DO: Grab the location needed to put in replace
-            document.location.replace('/*add in element from shadin */');
-        } else {
-            alert('Failed to get the scores for this quiz')
+const myChart = new Chart(ctx, {
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
         }
-    } catch (err) {
-        response.status(500).json(err)
     }
-}
+});

@@ -9,7 +9,7 @@
     "seed": "node seeds/index.js",
     "watch": "nodemon ./server.js",
     "remove": "node ./devTools/removeDB.js",
-    "build" : "node ./db/makeDB.js"
+    "build": "node ./db/makeDB.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/sobe1290/jubilant-octo-bassoon#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "chart.js": "^3.9.1",
     "connect-session-sequelize": "^7.1.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.1",
