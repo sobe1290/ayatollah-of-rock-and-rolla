@@ -1,3 +1,0 @@
-//fetch, GET all categories
-
-
