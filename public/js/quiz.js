@@ -52,7 +52,7 @@ const checkAnswer = async () => {
       user_id: user_id,
       quiz_id: quiz_id,
      }
-     let newPowerlevel = Number(userPowerlevel +score);
+     let newPowerlevel = (Number(userPowerlevel) + Number(score));
      console.log(newPowerlevel)
 
      let updatePowerLevel = {

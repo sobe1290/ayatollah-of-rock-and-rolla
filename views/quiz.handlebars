@@ -1,9 +1,12 @@
 {{!-- Receive the quiz from quizRoutes.js --}}
 {{!-- STILL NEEDS STYLING --}}
 
+{{!-- {{log activeUser}}
+{{log activeUser.dataValues.power_level}} --}}
+
 <h1 id="quiz-id" data-quiz="{{quizData.dataValues.id}}">{{quizData.dataValues.title}}</h1>
 <p id="user-id" data-usersession="{{user_id}}" class="d-none">{{user_id}}</p>
-<p id="powerLevel" data-powerlevel="{{powerLevel}}" class="d-none">{{powerLevel}}</p>
+<p id="powerLevel" data-powerlevel="{{activeUser.dataValues.power_level}}" class="d-none">{{activeUser.dataValues.power_level}}</p>
 {{#each quizData.dataValues.questions as | questions |}}
 <h2 class="pt-3">{{question}}</h2>
 
