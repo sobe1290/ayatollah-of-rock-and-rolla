@@ -52,9 +52,13 @@ const checkAnswer = async () => {
       user_id: user_id,
       quiz_id: quiz_id,
      }
-     let newPowerlevel = userPowerlevel +score;
-     console.log(`newPowerLevel ${newPowerlevel}`)
+     let newPowerlevel = Number(userPowerlevel +score);
+     console.log(newPowerlevel)
 
+     let updatePowerLevel = {
+      power_level: newPowerlevel,
+      user_id: user_id,
+    }
      //POST request for score
     const response = await fetch('/api/score', {
       method: 'POST',
@@ -67,12 +71,10 @@ const checkAnswer = async () => {
         alert('updating score has failed')
       }
       // put request for user
-      const putResponse = await fetch('api/users/update', {
+      const putResponse = await fetch('../api/users/update', {
         method: 'PUT',
-        body: JSON.stringify({
-          power_level: Number(newPowerlevel)
-        }),
-      headers: { 'Content-Type': 'application/json' }, 
+        body: JSON.stringify(updatePowerLevel),
+        headers: { 'Content-Type': 'application/json' }, 
       })
       if (putResponse.ok) {
         console.log('put request for USERS successful')
@@ -81,7 +83,7 @@ const checkAnswer = async () => {
         alert('updating POwerlevel has failed')
       }
 
-      const postuserquiz =await fetch('api/userquiz',{
+      const postuserquiz =await fetch('../api/userquiz',{
         method: 'POST',
         body: JSON.stringify ({
           user_id: user_id,
@@ -91,6 +93,7 @@ const checkAnswer = async () => {
       })
       if (postuserquiz.ok) {
         console.log('POST request for Userquiz successful')
+        document.location.replace(`/quiz/${quiz_id}/leaderboard/`)
         
       }else {
         alert('updating userquiz has failed')
