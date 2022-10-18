@@ -93,7 +93,7 @@ const checkAnswer = async () => {
       })
       if (postuserquiz.ok) {
         console.log('POST request for Userquiz successful')
-        document.location.replace(`/quiz/${quiz_id}/leaderboard/`)
+        document.location.replace(`/quiz/${quiz_id}/leaderboard`)
         
       }else {
         alert('updating userquiz has failed')
