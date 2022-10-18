@@ -849,91 +849,91 @@ const quizData = [
             },
             {
                 number: 3,
-                question: '',
+                question: 'What planet is Superman from?',
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Krypton',
+                        b: 'Earth',
+                        c: 'Mogo',
+                        d: 'Qward'
                     },
-                correct: ''
+                correct: 'Krypton'
             },
             {
                 number: 4,
-                question: "",
+                question: "Which of these is not one of Superman's powers",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Heat Vision',
+                        b: 'X-Ray Vision',
+                        c: 'Super Flare',
+                        d: 'Kamehameha'
                     },
-                correct: ''
+                correct: 'Kamehameha'
             },
             {
                 number: 5,
-                question: "?",
+                question: "Who killed superman first?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Lex Luthor',
+                        b: 'Batman',
+                        c: 'Doomsday',
+                        d: 'Lois Lane'
                     },
-                correct: ''
+                correct: 'Doomsday'
             },
             {
                 number: 6,
-                question: "?",
+                question: "What was superman's born name?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Jor-El',
+                        b: 'Kal-El',
+                        c: 'Kon-El',
+                        d: 'Seyg-El'
                     },
-                correct: ''
+                correct: 'Kal-El'
             },
             {
                 number: 7,
-                question: "?",
+                question: "What is superman's middle name?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'John',
+                        b: 'Steve',
+                        c: 'Joseph',
+                        d: 'Tim'
                     },
-                correct: ''
+                correct: 'Joseph'
             },
             {
                 number: 8,
-                question: "?",
+                question: "What does the S on his chest stand for?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Superman',
+                        b: 'Resurrection',
+                        c: 'Fear',
+                        d: 'Hope'
                     },
-                correct: ''
+                correct: 'Hope'
             },
             {
                 number: 9,
-                question: "?",
+                question: "How does Superman hide his identity?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Make up',
+                        b: 'voice alterer',
+                        c: 'platform shoes',
+                        d: 'spine compression'
                     },
-                correct: ''
+                correct: 'spine compression'
             },
             {
                 number: 10,
-                question: "?",
+                question: "What year did the first Superman Comic come out?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: '1949',
+                        b: '1938',
+                        c: '1960',
+                        d: '1954'
                     },
-                correct: ''
+                correct: '1938'
             },
         ],
         category_id: 4
