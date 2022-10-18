@@ -1,20 +1,33 @@
-import { Chart } from "chart.js";
-import Chart from 'chart.js'
+
 const ctx = document.getElementById('myChart');
+const userScore = document.getElementById('userScore').getAttribute('data-obj');
+const activeUser = document.getElementById('final').getAttribute('data-user');
+const scoreArr = document.getElementsByName('highscores');
+const userArr = document.getElementsByName('topUsers');
+let scores = [userScore]
+let users = [activeUser]
+
+for (let i=0; i<scoreArr.length; i++) {
+    scores.push(scoreArr[i].innerText)
+};
+for (let i=0; i<userArr.length; i++) {
+    users.push(userArr[i].innerText)
+};
 
 const myChart = new Chart(ctx, {
+    type: 'bar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: users,
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: 'Scores',
+            data: scores,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
@@ -29,9 +42,12 @@ const myChart = new Chart(ctx, {
     },
     options: {
         scales: {
-            y: {
-                beginAtZero: true
-            }
+            yAxes: [{
+                ticks: {
+                    min: 0, 
+                    max: 100 
+                }
+            }]
         }
     }
 });

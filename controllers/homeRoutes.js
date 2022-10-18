@@ -165,6 +165,7 @@ router.get('/quiz/:id/leaderboard', auth, async (req, res) => {
 
     const userScore = await Score.findAll({
       order: [ [ 'createdAt', 'DESC' ] ],
+      include: { model: User },
       limit: 1
     })
 
