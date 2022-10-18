@@ -109,11 +109,12 @@ router.get('/quiz/:id', auth, async (req, res) => {
   try {
     const quizData = await Quiz.findByPk(req.params.id, {
       include: [{ model: Score,
-        attributes: ['score'],
-        include: [{ model: User,
-        attributes: ['user_name'] 
-        }] 
+        attributes: ['score']
       }]
+    })
+
+    const activeUser = await User.findByPk(req.session.user_id, {
+      attributes: ['power_level']
     })
     .catch((err) => {
       res.json(err);
@@ -122,7 +123,7 @@ router.get('/quiz/:id', auth, async (req, res) => {
     res.status(200).render('quiz', {
       quizData, 
       user_id: req.session.user_id,
-      powerLevel: req.session.powerLevel,
+      activeUser
        
     })
     
@@ -161,11 +162,17 @@ router.get('/quiz/:id/leaderboard', auth, async (req, res) => {
         ],
         limit: 5
     })
+
+    const userScore = await Score.findAll({
+      order: [ [ 'createdAt', 'DESC' ] ],
+      limit: 1
+    })
+
     .catch((err) => {
       res.json(err);
     });
 
- res.render('scoreScreen', { scoreData })
+ res.render('scoreScreen', { scoreData, userScore } )
 
   }
     catch (err) {
