@@ -1,14 +1,35 @@
-// // Receive username, email, power level
-// const User = require('../../models/User');
- 
-// const userPowerlevel = document.getElementById('powerLevel').getAttribute('data-powerlevel');
+const ctx = document.getElementById('myChart');
+let power = document.getElementById('powerLevel').getAttribute('data-powerlevel');
 
-// //grabing the sign in variables from user
-// const userName = await User.findOne({ 
-//     attributes: ['']})
-// const userEmail = document.querySelectorAll("#user-email") //PLACEHOLDER FOR WHEN DEBORAH GIVES ME THE ID FOR THIS
+power = Number(power)
 
-// //TO DO: Grab power level from user
-// //const powerlevel = User.
+const myChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['Power Level'],
+        datasets: [{
+            data: [power],
+            backgroundColor: [
+                'rgba(255, 99, 132, 1)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
 
-
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        legend: {
+            display: false
+        },
+        scales: {
+            xAxes: [{
+                ticks: {
+                    min: 0, 
+                    max: 10000
+                }
+            }]
+        }
+    }
+});

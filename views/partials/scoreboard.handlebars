@@ -1,5 +1,6 @@
 {{#each scoreData}}
     <tr>
+        <td>{{inc @index}}</td>
         <td name="highscores" data-score="{{dataValues.score}}">{{dataValues.score}}</td>
         <td name="topUsers" data-user="{{dataValues.user.dataValues.user_name}}">{{dataValues.user.dataValues.user_name}}</td>
         <td>{{dataValues.user.dataValues.power_level}}</td>

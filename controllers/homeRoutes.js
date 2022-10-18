@@ -24,9 +24,10 @@ router.get('/account',auth, async (req, res) => {
             'title'
           ],
           include: { model: Category }
-        }
+        },
+        limit: 5
       }],
-      limit: 5
+
     });
     res.status(200).render('account', { activeUser }
     )
