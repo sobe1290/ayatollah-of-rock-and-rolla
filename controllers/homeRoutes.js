@@ -47,9 +47,6 @@ router.get('/signup', async (req, res) => {
 router.get('/categories', auth, async (req, res) => {
     try {
       const categoryData = await Category.findAll({
-        // include: [{ model: Quiz,
-        //   attributes: ['title']
-        // }],
       }).catch((err) => {
         res.json(err);
       });
@@ -130,6 +127,19 @@ router.get('/quiz/:id', auth, async (req, res) => {
     })
     
 
+  }
+    catch (err) {
+      res.status(500).json(err);
+    }
+});
+
+router.get('/create', auth, async (req, res) => {
+  try {
+    const categoryData = await Category.findAll({
+    }).catch((err) => {
+      res.json(err);
+    });
+    res.status(200).render('quizCreate', { categoryData })
   }
     catch (err) {
       res.status(500).json(err);

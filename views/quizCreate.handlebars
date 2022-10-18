@@ -1,0 +1,26 @@
+<h1>Make a quiz</h1>
+
+<label for="categories">Pick a category for your quiz</label>
+<select id="categories" name="categories">
+    {{#each categoryData}}
+        {{> quizMakerCats}}
+    {{/each}}
+</select>
+<form>
+    <input id="title" type="text" placeholder="What's the title of your quiz?">
+    <input id="description" type="text" placeholder="Write a one sentence description of your quiz">
+    <input id="question" type="text" placeholder="Question goes here">
+    <input id="a" data-q= "a" type="text" placeholder="Option 1 goes here">
+    <input id="b" data-q= "b" type="text" placeholder="Option 2 goes here">
+    <input id="c" data-q= "c" type="text" placeholder="Option 3 goes here">
+    <input id="d" data-q= "d" type="text" placeholder="Option 4 goes here">
+    <select id="correct">
+        <option value="a">Option 1</option>
+        <option value="b">Option 2</option>
+        <option value="c">Option 3</option>
+        <option value="d">Option 4</option>
+    </select>
+    <button id="saveQBtn">Save question</button>
+    <button id="saveQuizBtn">My quiz is finished!</button>
+</form>
+<script src="../public/js/createQuiz.js" rel="text/javascript"></script>
