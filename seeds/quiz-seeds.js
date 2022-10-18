@@ -732,91 +732,91 @@ const quizData = [
             },
             {
                 number: 3,
-                question: '',
+                question: 'Who was the first child to hold the mantle of Robin',
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Dick Grayson',
+                        b: 'Jason Todd',
+                        c: 'Tim Drake',
+                        d: 'Damian Wayne'
                     },
-                correct: ''
+                correct: 'Dick Grayson'
             },
             {
                 number: 4,
-                question: "",
+                question: "With whom did Batman have a daughter with, in an alternate timeline",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Batgirl',
+                        b: 'Harley Quinn',
+                        c: 'Catwoman',
+                        d: 'Poison Ivy'
                     },
-                correct: ''
+                correct: 'Catwoman'
             },
             {
                 number: 5,
-                question: "?",
+                question: "What is Batman's favorite food?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Ginger cricket cookies',
+                        b: 'Deep-Fried Tarantulas',
+                        c: 'Fruit Cake',
+                        d: 'Mulligatawny soup'
                     },
-                correct: ''
+                correct: 'Mulligatawny soup'
             },
             {
                 number: 6,
-                question: "?",
+                question: "Turning the time on the grandather clock to what time opens the Batcave?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: '6:15',
+                        b: '10:47',
+                        c: '2:36',
+                        d: '00:00'
                     },
-                correct: ''
+                correct: '10:47'
             },
             {
                 number: 7,
-                question: "?",
+                question: "What does Batman always carry in his belt, just in case?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'A Glock',
+                        b: 'Stimulants',
+                        c: 'Kryptonite',
+                        d: 'Grenades'
                     },
-                correct: ''
+                correct: 'Kryptonite'
             },
             {
                 number: 8,
-                question: "?",
+                question: "What is Batman's IQ?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: '192',
+                        b: '185',
+                        c: '166',
+                        d: '155'
                     },
-                correct: ''
+                correct: '192'
             },
             {
                 number: 9,
-                question: "?",
+                question: "Who did Batman train with?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Superman',
+                        b: 'The Teenage Mutant Ninja Turtles',
+                        c: 'Bane',
+                        d: 'Joker'
                     },
-                correct: ''
+                correct: 'The Teenage Mutant Ninja Turtles'
             },
             {
                 number: 10,
-                question: "?",
+                question: "What is the Batman-Wolverine hybird called?",
                 answers: {
-                        a: '',
-                        b: '',
-                        c: '',
-                        d: ''
+                        a: 'Honey Badger',
+                        b: 'Shadow Healer',
+                        c: 'Night Slasher',
+                        d: 'Dark Claw'
                     },
-                correct: ''
+                correct: 'Dark Claw'
             },
         ],
         category_id: 4
