@@ -11,7 +11,8 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 require('dotenv').config();
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
-const helpers = require('./utils/helpers')
+const helpers = require('./utils/helpers');
+
 
 //starting express
 const app = express();
@@ -38,7 +39,7 @@ const sess = {
 //middleware 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
 app.use(routes);
 

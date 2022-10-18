@@ -1,25 +1,53 @@
-// fetch GET all scores for that quiz, and current score by 
 
+const ctx = document.getElementById('myChart');
+const userScore = document.getElementById('userScore').getAttribute('data-obj');
+const activeUser = document.getElementById('final').getAttribute('data-user');
+const scoreArr = document.getElementsByName('highscores');
+const userArr = document.getElementsByName('topUsers');
+let scores = [userScore]
+let users = [activeUser]
 
-// function to grab all the scores from quizzes
-const scoreQuizzesHandler = async (event) => {
-    event.preventDefault();
-    
+for (let i=0; i<scoreArr.length; i++) {
+    scores.push(scoreArr[i].innerText)
+};
+for (let i=0; i<userArr.length; i++) {
+    users.push(userArr[i].innerText)
+};
 
-
-    const response = await fetch('/api/scoreRoutes', {
-        method: 'GET',
-    });
-        //TO DO: how do we grab the scores just for the selected quiz?
-        // query score table via
-    try {
-        if (response.ok) {
-            //TO DO: Grab the location needed to put in replace
-            document.location.replace('/*add in element from shadin */');
-        } else {
-            alert('Failed to get the scores for this quiz')
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: users,
+        datasets: [{
+            label: 'Scores',
+            data: scores,
+            backgroundColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    min: 0, 
+                    max: 100 
+                }
+            }]
         }
-    } catch (err) {
-        response.status(500).json(err)
     }
-}
+});

@@ -1,14 +1,9 @@
-
-
 {{#each userScore}}
 <div class="bg-dark m-5 p-5">
-    <h3 class="display-3 color-forest text-center">FINAL SCORE</h3>
-    <h1 class="display-2 color-maize text-center">{{dataValues.score}}</h1>
+    <h3 class="display-3 color-forest text-center" id="final" data-user="{{dataValues.user.dataValues.user_name}}">FINAL SCORE</h3>
+    <h1 class="display-2 color-maize text-center" id="userScore" data-obj="{{dataValues.score}}">{{dataValues.score}}</h1>
 </div> 
 {{/each}}
-
-
-
 
 <h4 class="text-center m-4">Quiz High Scores</h4>
 {{#if scoreData}}
@@ -28,4 +23,7 @@
 </div>
 {{/if}}
 
-<script src="../public/js/scoreScreen.js" type="text/javascript"></script> 
+
+<canvas id="myChart" width="400" height="100"></canvas>
+<script src="/js/scoreScreen.js"></script>
+
