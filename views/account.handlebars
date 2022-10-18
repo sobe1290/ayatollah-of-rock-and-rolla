@@ -1,4 +1,4 @@
-{{!-- {{log activeUser}} --}}
+{{log activeUser}}
 
 <div class="d-flex flex-column flex-md-row">
     <!-- The following image should change based on user's Power Level-->
@@ -20,9 +20,6 @@
     <h3 class="text-center m-4">Recent Scores</h3>
     <!-- Replace table info with variables -->
     {{#if activeUser.scores}}
-    {{!-- {{#each activeUser as | user |}}
-        {{> recentScores}}
-    {{/each}} --}}
     <div>
         <table class="table table-dark">
             <thead>
