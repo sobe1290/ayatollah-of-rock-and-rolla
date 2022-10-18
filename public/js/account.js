@@ -3,7 +3,6 @@ let power = document.getElementById('powerLevel').getAttribute('data-powerlevel'
 const avatar = document.getElementById('avatar');
 power = Number(power)
 
-
 switch (true) {
     case (power <2000):
         avatar.src = "../images/bronzeAvatar.PNG"
