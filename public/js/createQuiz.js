@@ -13,6 +13,7 @@ const correctAnswer = document.getElementById('correct');
 let newQuiz = {};
 const questionArr = [];
 answerArr = [optionA, optionB, optionC, optionD]
+answerArr2 = [optionA.getAttribute('data-q'), optionB.getAttribute('data-q'), optionC.getAttribute('data-q'), optionD.getAttribute('data-q')]
 
 const saveQHandler = (ev) => {
     ev.preventDefault();
@@ -61,6 +62,7 @@ const saveQuizHandler = async (ev) => {
         questions: questionArr,
         category_id: category.value
     };
+    console.log(newQuiz)
     const response = await fetch('/api/quiz/', {
         method: 'POST',
         body: JSON.stringify(newQuiz),
