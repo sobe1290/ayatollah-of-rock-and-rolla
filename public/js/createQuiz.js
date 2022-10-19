@@ -13,11 +13,9 @@ const correctAnswer = document.getElementById('correct');
 let newQuiz = {};
 const questionArr = [];
 answerArr = [optionA, optionB, optionC, optionD]
-answerArr2 = [optionA.getAttribute('data-q'), optionB.getAttribute('data-q'), optionC.getAttribute('data-q'), optionD.getAttribute('data-q')]
 
 const saveQHandler = (ev) => {
     ev.preventDefault();
-    // findCorrect()
     let question = {
         answers: {
             a: optionA.value,
@@ -41,7 +39,6 @@ const serialQuestions = (arr) => {
     for (let i=0; i<arr.length; i++) {
         arr[i].number = i+1
     }
-    console.log(arr)
 };
 
 const findCorrect = () => {
@@ -62,7 +59,6 @@ const saveQuizHandler = async (ev) => {
         questions: questionArr,
         category_id: category.value
     };
-    console.log(newQuiz)
     const response = await fetch('/api/quiz/', {
         method: 'POST',
         body: JSON.stringify(newQuiz),
@@ -73,7 +69,7 @@ const saveQuizHandler = async (ev) => {
       } else {
         alert('Your quiz is bad and you should feel bad.')
       }
-}
+};
 
 saveQBtn.addEventListener('click', saveQHandler);
 saveQuiz.addEventListener('click', saveQuizHandler);
