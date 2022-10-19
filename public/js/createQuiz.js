@@ -16,7 +16,6 @@ answerArr = [optionA, optionB, optionC, optionD]
 
 const saveQHandler = (ev) => {
     ev.preventDefault();
-    // findCorrect()
     let question = {
         answers: {
             a: optionA.value,
@@ -40,7 +39,6 @@ const serialQuestions = (arr) => {
     for (let i=0; i<arr.length; i++) {
         arr[i].number = i+1
     }
-    console.log(arr)
 };
 
 const findCorrect = () => {
@@ -71,7 +69,7 @@ const saveQuizHandler = async (ev) => {
       } else {
         alert('Your quiz is bad and you should feel bad.')
       }
-}
+};
 
 saveQBtn.addEventListener('click', saveQHandler);
 saveQuiz.addEventListener('click', saveQuizHandler);

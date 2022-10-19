@@ -1,13 +1,58 @@
-<h1>Make a quiz</h1>
+<h2 class="text-center display-3 display-md-4 m-3">Make a Quiz</h2>
 
-<label for="categories">Pick a category for your quiz</label>
-<select id="categories" name="categories">
-    {{#each categoryData}}
-        {{> quizMakerCats}}
-    {{/each}}
-</select>
 <form>
-    <input id="title" type="text" placeholder="What's the title of your quiz?">
+    <div>
+        <label for="categories" class="form-label">Pick a category for your quiz</label>
+        <select id="categories" name="categories" class="form-select mb-2 w-25">
+        {{#each categoryData}}
+        {{> quizMakerCats}}
+        {{/each}}
+        </select>
+    </div>
+    <div class="m-b">
+        <label class="form-label"></label>
+        <input type="text" id="title" class="form-control" placeholder="What's the title of your quiz?">
+    </div>
+    <div>
+        <label class="form-label"></label>
+        <input type="text" id="description" class="form-control" placeholder="Write a one sentence description of your quiz">
+    </div>
+    <div>
+        <label class="form-label"></label>
+        <input type="text" id="question" class="form-control" placeholder="Question goes here">
+    </div>
+    <div>
+        <label class="form-label"></label>
+        <input type="text" id="a" data-q= "a" class="form-control" placeholder="Option 1 goes here">
+    </div>
+    <div>
+        <label class="form-label"></label>
+        <input type="text" id="b" data-q= "b" class="form-control" placeholder="Option 2 goes here">
+    </div>
+    <div>
+        <label class="form-label"></label>
+        <input type="text" id="c" data-q= "c" class="form-control" placeholder="Option 3 goes here">
+    </div>
+    <div>
+        <label class="form-label"></label>
+        <input type="text" id="d" data-q= "d" class="form-control" placeholder="Option 4 goes here">
+    </div>
+    <div>
+        <label class="form-label mt-3">Select which is the correct answer below</label>
+        <select id="correct" class="form-select mb-3 w-25">
+        <option value="a">Option 1</option>
+        <option value="b">Option 2</option>
+        <option value="c">Option 3</option>
+        <option value="d">Option 4</option>
+    </select>
+    </div>
+    
+    <button id="saveQBtn" class="btn btn-primary m-4 btn-color-blue-crayola btn-lg text-center">Save this question</button>
+    <button id="saveQuizBtn" class="btn btn-primary m-4 btn-color-forest btn-lg text-center">My quiz is finished!</button>
+</form>
+<script src="/js/createQuiz.js" rel="text/javascript"></script>
+
+{{!-- <input id="title" type="text" class="form-label" placeholder="What's the title of your quiz?">
     <input id="description" type="text" placeholder="Write a one sentence description of your quiz">
     <input id="question" type="text" placeholder="Question goes here">
     <input id="a" data-q= "a" type="text" placeholder="Option 1 goes here">
@@ -19,8 +64,4 @@
         <option value="b">Option 2</option>
         <option value="c">Option 3</option>
         <option value="d">Option 4</option>
-    </select>
-    <button id="saveQBtn">Save question</button>
-    <button id="saveQuizBtn">My quiz is finished!</button>
-</form>
-<script src="/js/createQuiz.js" rel="text/javascript"></script>
+    </select> --}}
