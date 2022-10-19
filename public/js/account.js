@@ -29,10 +29,10 @@ const myChart = new Chart(ctx, {
         datasets: [{
             data: [power],
             backgroundColor: [
-                'rgba(255, 99, 132, 1)',
+                '#4DA167',
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
+                '#4DA167',
 
             ],
             borderWidth: 1
@@ -50,5 +50,6 @@ const myChart = new Chart(ctx, {
                 }
             }]
         }
-    }
+    },
+   
 });

@@ -11,19 +11,19 @@
 <h2 class="pt-3">{{question}}</h2>
 
 <form>
-    <div>
+    <div class="m-2">
         <input type="radio" value="{{answers.a}}" class="form-check-input" name="questionAnswers" id="AnswerOne{{number}}">{{answers.a}}</input>
         <label class="form-check-label" for="AnswerOne{{number}}"></label>
     </div>
-    <div>
+    <div class="m-2">
         <input type="radio" value="{{answers.b}}" class="form-check-input" name="questionAnswers" id="AnswerTwo{{number}}">{{answers.b}}</input>
         <label class="form-check-label" for="AnswerTwo{{number}}"></label>
     </div>
-    <div>
+    <div class="m-2">
         <input type="radio" value="{{answers.c}}" class="form-check-input" name="questionAnswers" id="AnswerThree{{number}}">{{answers.c}}</input>
         <label class="form-check-label" for="AnswerThree{{number}}"></label>
     </div>
-    <div>
+    <div class="m-2">
         <input type="radio" value="{{answers.d}}" class="form-check-input" name="questionAnswers" id="AnswerFour{{number}}">{{answers.d}}</input>
         <label class="form-check-label" for="AnswerFour{{number}}"></label>        
     </div>
@@ -31,7 +31,7 @@
     <p id="correctAnswer{{number}}" name="correctAnswer" class="d-none">{{correct}}</p>
     {{/each}}
 
-<button id="submitBTN">Submit</button>
+<button class="btn btn-primary m-4 btn-color-forest btn-large text-center" id="submitBTN">Submit</button>
 
 <script src="/js/quiz.js" type="text/javascript"></script> 
 
