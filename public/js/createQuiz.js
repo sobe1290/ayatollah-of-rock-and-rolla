@@ -16,7 +16,7 @@ answerArr = [optionA, optionB, optionC, optionD]
 
 const saveQHandler = (ev) => {
     ev.preventDefault();
-    findCorrect()
+    // findCorrect()
     let question = {
         answers: {
             a: optionA.value,
