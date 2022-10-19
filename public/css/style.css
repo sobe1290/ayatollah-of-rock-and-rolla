@@ -52,11 +52,14 @@ h2, h3, h4, h5 {
 .btn-color-forest:hover {
     background-color: var(--contrast-1);
 }
+.btn-color-amaranth:hover {
+    background-color: var(--contrast-1);
+}
 .btn-color-blue-crayola:hover {
     background-color: var(--contrast-1);
 }
-.btn-color-blue-crayola {
-    background-color: var(--contrast-2);
+.btn-color-amaranth {
+    background-color: var(--contrast-4);
 }
 .btn-color-forest {
     background-color: var(--contrast-3);
