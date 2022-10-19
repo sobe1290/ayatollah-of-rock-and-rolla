@@ -30,9 +30,13 @@
   
  <h2 id="id-4">Contributing</h2> 
  Shadin Al-Arab: https://github.com/shadin-a
+ 
  Jacob Reeves: https://github.com/JDReeves86
+ 
  Shep Sheperdigian: https://github.com/zshep
+ 
  Patrick Sobczyk: https://github.com/sobe1290
+ 
  Deborah Wade: https://github.com/sewprano
   
  <h2 id="id-5">License</h2> 
