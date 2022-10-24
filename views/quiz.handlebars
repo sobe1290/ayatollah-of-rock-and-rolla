@@ -1,10 +1,10 @@
-{{!-- Receive the quiz from quizRoutes.js --}}
-{{!-- STILL NEEDS STYLING --}}
 
-{{!-- {{log activeUser}}
-{{log activeUser.dataValues.power_level}} --}}
+
+{{!-- {{log activeUser}}--}}
+{{!-- {{log creatorData.dataValues}} --}}
 
 <h1 id="quiz-id" data-quiz="{{quizData.dataValues.id}}">{{quizData.dataValues.title}}</h1>
+<small>Created by: {{creatorData.dataValues.user_name}}</small>
 <p id="user-id" data-usersession="{{user_id}}" class="d-none">{{user_id}}</p>
 <p id="powerLevel" data-powerlevel="{{activeUser.dataValues.power_level}}" class="d-none">{{activeUser.dataValues.power_level}}</p>
 {{#each quizData.dataValues.questions as | questions |}}
@@ -35,10 +35,4 @@
 
 <script src="/js/quiz.js" type="text/javascript"></script> 
 
-
-
-{{!-- <button id="AnswerOne">{{quiz.question[{{>}}].answers.a}}</button>
-<button id="AnswerTwo">{{quiz.question[{{>}}].answers.b}}</button>
-<button id="AnswerThree">{{quiz.question[{{>}}].answers.c}}</button>
-<button id="AnswerFour">{{quiz.question[{{>}}].answers.d}}</button> --}}
 

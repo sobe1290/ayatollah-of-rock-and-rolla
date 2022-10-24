@@ -9,6 +9,13 @@ const connection = mysql.createConnection({
 });
 
 connection.query( 
+    'DROP DATABASE IF EXISTS nerdquiz_db',
+    function(err, results) {
+        if(err) {console.log(err)}
+        else console.log(results)
+    }
+);
+connection.query( 
     'CREATE DATABASE IF NOT EXISTS nerdquiz_db',
     function(err, results) {
         if(err) {console.log(err)}

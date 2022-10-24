@@ -9,6 +9,7 @@ let optionB = document.getElementById('b');
 let optionC = document.getElementById('c');
 let optionD = document.getElementById('d');
 const correctAnswer = document.getElementById('correct');
+const author = document.getElementById('quizAuthor').innerText;
 
 let newQuiz = {};
 const questionArr = [];
@@ -57,8 +58,11 @@ const saveQuizHandler = async (ev) => {
         title: title.value,
         description: description.value,
         questions: questionArr,
+        creator_id: author,
         category_id: category.value
     };
+        console.log(newQuiz)
+
     const response = await fetch('/api/quiz/', {
         method: 'POST',
         body: JSON.stringify(newQuiz),

@@ -73,6 +73,30 @@ router.get('/categories/:id', async (req, res) => {
     }
 });
 
+router.get('/user/:id', async (req, res) => {
+  try {
+    const quizData = await Quiz.findAll({
+      where: {
+        creator_id: req.params.id
+      },
+      attributes: [
+        'title',
+        'description',
+        'id'
+    ]
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+
+    res.render('myQuizzes', {quizData})
+
+  }
+    catch (err) {
+      res.status(500).json(err);
+    }
+});
+
 //This is the route to call to add a quiz (Required body part: title, questions, category_id)
 router.post('/', async (req, res) => {
   try {
@@ -81,6 +105,7 @@ router.post('/', async (req, res) => {
       questions: req.body.questions,
       category_id: req.body.category_id,
       description: req.body.description,
+      creator_id: req.body.creator_id
     });
 
     res.status(200).json(quizData);
@@ -103,7 +128,7 @@ router.delete('/:id', (req, res) => {
         res.status(404).json({ message: 'No quiz found with this id' });
         return;
       }
-      res.json(thisQuiz);
+      res.status(200).json(thisQuiz);
     })
     .catch((err) => {
       console.log(err);
