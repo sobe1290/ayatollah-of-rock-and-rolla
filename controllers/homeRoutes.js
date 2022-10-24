@@ -52,7 +52,6 @@ router.get('/categories', auth, async (req, res) => {
         res.json(err);
       });
 
-      // console.log(categoryData)
       res.status(200).render('categories', { categoryData })
     } catch (err) {
       res.status(500).json(err);
@@ -113,7 +112,11 @@ router.get('/quiz/:id', auth, async (req, res) => {
         attributes: ['score']
       }]
     })
-
+    const creator = quizData.dataValues.creator_id;
+    const creatorData = await User.findOne({
+        where: {id: creator},
+      });
+    
     const activeUser = await User.findByPk(req.session.user_id, {
       attributes: ['power_level']
     })
@@ -124,8 +127,8 @@ router.get('/quiz/:id', auth, async (req, res) => {
     res.status(200).render('quiz', {
       quizData, 
       user_id: req.session.user_id,
-      activeUser
-       
+      activeUser,
+      creatorData
     })
     
 
@@ -141,7 +144,12 @@ router.get('/create', auth, async (req, res) => {
     }).catch((err) => {
       res.json(err);
     });
-    res.status(200).render('quizCreate', { categoryData })
+
+    const activeUser = await User.findByPk(req.session.user_id,{
+      attributes: ['id']
+    })
+
+    res.status(200).render('quizCreate', { categoryData, activeUser })
   }
     catch (err) {
       res.status(500).json(err);

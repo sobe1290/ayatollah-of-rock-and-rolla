@@ -32,7 +32,8 @@ Score.init (
             references: {
                 model: Quiz,
                 key: 'id'
-            }
+            },
+            onDelete: 'CASCADE'
         },
     },
     {
