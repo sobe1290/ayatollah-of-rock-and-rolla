@@ -12,20 +12,19 @@ Question.init (
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
-            // onDelete:'CASCADE'
         },
-        questions: {
+        quest: {
             type: DataTypes.JSON,
             allowNull: false,
         },
         quiz_id: {
             type: DataTypes.INTEGER,
             allowNull: true,
+            onDelete: 'set null',
             references: {
-                model: Quiz,
+                model: 'quizzes',
                 key: 'id'
             },
-            onDelete: 'set null'
         },
         category_id: {
             type: DataTypes.INTEGER,
@@ -33,15 +32,15 @@ Question.init (
             references: {
                 model: Category,
                 key: 'id'
-            }
+            },
         },
     },
     {
         sequelize,
         timestamps: true,
-        freezeTableName: false,
+        freezeTableName: true,
         underscored: true,
-        modelName: 'question',
+        modelName: 'quest',
     },
 )
 

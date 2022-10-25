@@ -948,6 +948,6 @@ const quizData = [
     },
 ];
 
-const seedQuizzes = () => Quiz.bulkCreate(quizData)
+const seedQuizzes = () => Quiz.bulkCreate(quizData, {individualHooks: true})
 
 module.exports = seedQuizzes;

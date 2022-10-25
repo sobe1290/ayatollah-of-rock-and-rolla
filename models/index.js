@@ -3,6 +3,7 @@ const Quiz = require('./Quiz');
 const Category = require('./Category');
 const UserQuiz = require('./UserQuiz');
 const Score = require('./Score');
+const Question = require('./Question');
 
 Quiz.belongsTo(Category, {
     foreignKey: 'category_id',
@@ -47,12 +48,20 @@ Quiz.hasMany(Score, {
 User.hasMany(Quiz, {
     foreignKey: 'creator_id',
     constraints: false
-})
+});
 
 Quiz.belongsTo(User, {
     foreignKey: 'creator_id',
     constraints: false
+});
+
+Question.belongsTo(Quiz, {
+    foreignKey: 'quiz_id'
 })
+
+Question.belongsTo(Category, {
+    foreignKey: 'category_id'
+});
 
 module.exports = {
     User,

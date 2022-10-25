@@ -8,6 +8,14 @@ const Question = require('../../models/Question');
 router.get('/', async (req, res) => {
     try {
       const questionData = await Question.findAll({
+        include: [
+          { model: Quiz,
+            attributes: ['title']
+          },
+          { model: Category,
+            attributes: ['title']
+          },
+        ]
       }).catch((err) => {
         res.json(err);
       });

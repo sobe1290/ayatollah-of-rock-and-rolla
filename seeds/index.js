@@ -6,9 +6,21 @@ const seedScores = require('./score-seeds');
 const seedQuestions = require('./question-seeds');
 
 const sequelize = require('../config/connection');
+const Quiz = require('../models/Quiz');
+const Category = require('../models/Category');
+const User = require('../models/User');
+const Score = require('../models/Score');
+const UserQuiz = require('../models/UserQuiz');
+const Question = require('../models/Question');
 
 const seedAll = async () => {
-    await sequelize.sync({ force: false });
+    await Category.sync();
+    await User.sync();
+    await Quiz.sync();
+    await Score.sync();
+    await UserQuiz.sync();
+    await Question.sync();
+    // await sequelize.sync({ force: false });
     console.log('\n**//---- DB synced ----\\\\**\n');
     await seedCategories();
     console.log('\n**//---- Categories seeded ----\\\\**\n');
@@ -20,8 +32,8 @@ const seedAll = async () => {
     console.log('\n**//---- User Quizes ready for harvest ----\\\\**\n');
     await seedScores();
     console.log('\n**//---- Scores made for a bountiful harvest!! ----\\\\**\n')
-    await seedQuestions();
-    console.log('\n**//---- Questions for better health. ----\\\\**\n')
+    // await seedQuestions();
+    // console.log('\n**//---- Questions for better health. ----\\\\**\n')
     process.exit(0);
 };
 

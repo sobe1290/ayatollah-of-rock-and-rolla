@@ -1,4 +1,4 @@
-const UserScore = require('../models/UserScore');
+const QuestQuizCat = require('../models/QuestQuizCat');
 
 const userScoreData = [
     {
