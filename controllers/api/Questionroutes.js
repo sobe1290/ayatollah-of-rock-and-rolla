@@ -19,5 +19,14 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.post('/', async (req, res) => {
+    try{
+        const questionData = await Question.create({
+            questions: req.body.questions,
+            category_id: req.body.category_id
+        });
+        res.status(200).json(questionData)
+    } catch (err) {res.status(500).json(err)}
+})
 
 module.exports = router;
