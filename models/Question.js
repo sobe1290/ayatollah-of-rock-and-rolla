@@ -20,11 +20,12 @@ Question.init (
         },
         quiz_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             references: {
                 model: Quiz,
                 key: 'id'
-            }
+            },
+            onDelete: 'set null'
         },
         category_id: {
             type: DataTypes.INTEGER,
@@ -41,7 +42,6 @@ Question.init (
         freezeTableName: false,
         underscored: true,
         modelName: 'question',
-        onDelete: 'CASCADE'
     },
 )
 
