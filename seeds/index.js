@@ -8,7 +8,7 @@ const sequelize = require('../config/connection');
 
 const seedAll = async () => {
 
-    await sequelize.sync({ alter: true });
+    await sequelize.sync({ force: true });
     console.log('\n**//---- DB synced ----\\\\**\n');
     await seedCategories();
     console.log('\n**//---- Categories seeded ----\\\\**\n');
