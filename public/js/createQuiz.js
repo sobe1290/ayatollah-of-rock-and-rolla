@@ -27,20 +27,6 @@ const saveQHandler = async (ev) => {
         correct: findCorrect(),
         question: quizQuestion.value
     };
-    let questionData = { 
-        questions: question,
-        category_id: category.value
-    }
-    const response = await fetch('/api/questions/',{
-        method: 'POST',
-        body: JSON.stringify(questionData),
-        headers: { 'Content-Type': 'application/json' },
-    });
-    if (response.ok) {
-        alert('question saved!')
-    } else {
-        alert('Something went wrong')
-    }
     questionArr.push(question)
     question = {};
     quizQuestion.value = "";
