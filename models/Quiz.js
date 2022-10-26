@@ -63,6 +63,7 @@ Quiz.init (
         freezeTableName: false,
         underscored: true,
         modelName: 'quiz',
+        onDelete: 'CASCADE'
     },
 )
 
