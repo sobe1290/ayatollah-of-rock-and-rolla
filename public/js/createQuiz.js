@@ -9,12 +9,13 @@ let optionB = document.getElementById('b');
 let optionC = document.getElementById('c');
 let optionD = document.getElementById('d');
 const correctAnswer = document.getElementById('correct');
+const author = document.getElementById('quizAuthor').innerText;
 
 let newQuiz = {};
 const questionArr = [];
 answerArr = [optionA, optionB, optionC, optionD]
 
-const saveQHandler = (ev) => {
+const saveQHandler = async (ev) => {
     ev.preventDefault();
     let question = {
         answers: {
@@ -57,8 +58,12 @@ const saveQuizHandler = async (ev) => {
         title: title.value,
         description: description.value,
         questions: questionArr,
+        creator_id: author,
         category_id: category.value
     };
+        console.log(questionArr)
+
+
     const response = await fetch('/api/quiz/', {
         method: 'POST',
         body: JSON.stringify(newQuiz),

@@ -28,7 +28,8 @@ UserQuiz.init (
             references: {
                 model: Quiz,
                 key: 'id'
-            }
+            },
+            onDelete: 'CASCADE'
         },
     },
     {

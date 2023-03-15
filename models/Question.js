@@ -2,51 +2,46 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const Category = require('./Category');
 const Quiz = require('./Quiz');
-const User = require('./User');
-const Score = require('./Score');
 
-class UserScore extends Model {};
+class Question extends Model {};
 
-UserScore.init (
+Question.init (
     {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
         },
-        user_id: {
-            type: DataTypes.INTEGER,
+        quest: {
+            type: DataTypes.JSON,
             allowNull: false,
-            references: {
-                model: User,
-                key: 'id'
-            }
         },
         quiz_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
+            onDelete: 'set null',
             references: {
-                model: Quiz,
+                model: 'quizzes',
                 key: 'id'
-            }
+            },
         },
-        score_id: {
+        category_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: Score,
+                model: Category,
                 key: 'id'
-            }
-        }
+            },
+        },
     },
     {
         sequelize,
         timestamps: true,
-        freezeTableName: false,
+        freezeTableName: true,
         underscored: true,
-        modelName: 'user_score',
+        modelName: 'quest',
     },
 )
 
-module.exports = UserScore
+module.exports = Question

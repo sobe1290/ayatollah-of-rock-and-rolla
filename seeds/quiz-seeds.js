@@ -116,6 +116,7 @@ const quizData = [
                 correct: 'Monetary Fine'
             },
         ],
+        creator_id: 1,
         category_id: 1
     },
     {
@@ -160,8 +161,8 @@ const quizData = [
                 question: "What type of stolen Imperial ship earns the call sign 'Rogue One'?",
                 answers: {
                         a: 'Star Destroyer',
-                        b: 'Cargo shuttle',
-                        c: 'tie Fighter',
+                        b: 'Cargo Shuttle',
+                        c: 'Tie Fighter',
                         d: 'AT-ST'
                     },
                 correct: 'Cargo Shuttle'
@@ -234,6 +235,7 @@ const quizData = [
             },
             
         ],
+        creator_id: 1,
         category_id: 1
     },
     {
@@ -351,6 +353,7 @@ const quizData = [
                 correct: 'Azeroth'
             }
         ],
+        creator_id: 1,
         category_id: 2
     },
     {
@@ -468,6 +471,7 @@ const quizData = [
                 correct: 'Breath of the Wild'
             },
         ],
+        creator_id: 2,
         category_id: 2
     },
     {
@@ -585,6 +589,7 @@ const quizData = [
                 correct: 'Eowyn'
             },
         ],
+        creator_id: 2,
         category_id: 3
     },
     {
@@ -702,6 +707,7 @@ const quizData = [
                 correct: 'Sound'
             },
         ],
+        creator_id: 2,
         category_id: 3
     },
     {
@@ -819,6 +825,7 @@ const quizData = [
                 correct: 'Dark Claw'
             },
         ],
+        creator_id: 1,
         category_id: 4
     },
     {
@@ -936,10 +943,11 @@ const quizData = [
                 correct: '1938'
             },
         ],
+        creator_id: 1,
         category_id: 4
     },
 ];
 
-const seedQuizzes = () => Quiz.bulkCreate(quizData)
+const seedQuizzes = () => Quiz.bulkCreate(quizData, {individualHooks: true})
 
 module.exports = seedQuizzes;

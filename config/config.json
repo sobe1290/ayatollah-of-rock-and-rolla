@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "YGb1bffTHEmb2d!",
+    "database": "nerdquiz_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "process.env.DB_PASSWORD",
+    "database": "process.env.DB_NAME",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "process.env.DB_PASSWORD",
+    "database": "process.env.DB_NAME",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
